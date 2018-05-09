@@ -4,6 +4,5 @@
 .settings
 .idea
 .groovy
-/update.sh
 out
 *~
