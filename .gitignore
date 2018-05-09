@@ -1,0 +1,9 @@
+/bin
+.project
+.classpath
+.settings
+.idea
+.groovy
+/update.sh
+out
+*~
