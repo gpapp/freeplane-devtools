@@ -1,9 +1,9 @@
 <map version="freeplane 1.6.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Devtools+" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1525893873709" LINK="http://www.itworks.hu/freeplanegtd-release/" BACKGROUND_COLOR="#97c7dc">
+<node TEXT="Devtools+" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1542179418076" LINK="http://www.itworks.hu/freeplanegtd-release/" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="MapStyle">
-    <properties show_icon_for_attributes="true" show_note_icons="true" fit_to_viewport="false;"/>
+    <properties show_icon_for_attributes="true" fit_to_viewport="false;" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -58,7 +58,7 @@
 </hook>
 <attribute_layout NAME_WIDTH="129.74999613314878 pt" VALUE_WIDTH="134.24999599903833 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
-<attribute NAME="version" VALUE="v2.0.0"/>
+<attribute NAME="version" VALUE="v2.1.0"/>
 <attribute NAME="author" VALUE="Volker B&#xf6;rchers, Gergely Papp"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="1.6.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
