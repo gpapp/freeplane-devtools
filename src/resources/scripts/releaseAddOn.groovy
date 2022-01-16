@@ -11,6 +11,14 @@
 //  - It copies the <addon>.mm to <addon>-<version>.mm
 //  - It updates the script node's context from the files lying around
 ////////////////////////////////////////////////////////////////////////////////
+
+import java.util.regex.Pattern
+import java.util.zip.ZipEntry
+import java.util.zip.ZipOutputStream
+import java.nio.charset.StandardCharsets
+
+import javax.swing.JOptionPane
+
 import org.apache.commons.lang.StringUtils
 import org.apache.commons.lang.WordUtils
 import org.freeplane.core.util.LogUtils
@@ -23,9 +31,9 @@ import org.freeplane.features.url.mindmapmode.MFileManager
 import org.freeplane.plugin.script.proxy.NodeProxy
 import org.freeplane.plugin.script.proxy.Proxy
 
-import javax.swing.*
-import java.util.zip.ZipEntry
-import java.util.zip.ZipOutputStream
+// import javax.swing.*
+// import java.util.zip.ZipEntry
+// import java.util.zip.ZipOutputStream
 
 // script bindings
 errors = []
@@ -45,6 +53,11 @@ int updateScripts(Proxy.Node root) {
         errors << "The root node ${root.plainText} has no 'scripts' child. Please create it or better run 'Check Add-on'"
         return 0
     }
+    Proxy.Node englishTranslationsNode = root.children.find{ it.plainText == 'translations' }?.children?.find{ it.plainText == 'en' }
+    if (!englishTranslationsNode) {
+        errors << "There are no English translations. Please create them or better run 'Check Add-on'"
+        return 0
+    }
     scriptsNode.children.findAll { it.plainText.matches('.*\\.\\w+') }.each {
         File scriptFile = new File(scriptsDir, expand(root, it.plainText))
         if (!scriptFile.exists()) {
@@ -56,6 +69,9 @@ int updateScripts(Proxy.Node root) {
             count++
         }
         it.folded = true
+        def menuTitleKey = it.attributes.getFirst('menuTitleKey')
+        if (!englishTranslationsNode.attributes.getFirst(menuTitleKey))
+            errors << "Missing English translation for '${menuTitleKey}'. 'Check Add-on' may help."
     }
     return count
 }
@@ -200,7 +216,8 @@ byte[] getZipBytes(File topDir) {
     if (filesAdded) {
         zipOutput.close()
         return byteArrayOutputStream.toByteArray()
-    } else {
+    }
+    else {
         errors << "Directory to zip is empty: $topDir"
         return new byte[0]
     }
@@ -211,7 +228,8 @@ private byte[] getBytes(MapModel map) {
     BufferedWriter out = new BufferedWriter(stringWriter)
     Controller.getCurrentModeController().getMapController().getMapWriter()
             .writeMapAsXml(map, out, Mode.FILE, true, false)
-    return stringWriter.buffer.toString().bytes
+    return stringWriter.buffer.toString().getBytes(StandardCharsets.UTF_8)
+//    return stringWriter.buffer.toString().bytes
 }
 
 private boolean saveOrCancel() {
@@ -220,7 +238,7 @@ private boolean saveOrCancel() {
         return false
     }
     def question = "Do you want to save ${node.map.name} first?"
-    final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+    final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)
     if (selection == JOptionPane.YES_OPTION)
         node.map.save(false)
     return (selection != JOptionPane.CANCEL_OPTION)
@@ -316,7 +334,8 @@ try {
 if (errors) {
     ui.errorMessage("Errors during release (see logfile too): \n" + shortenAndWrap(errors, 200))
     logger.warn("Errors during release: " + shorten(errors, 3000))
-} else {
+}
+else {
     logger.info("Successfully created $releaseMapFile with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip and ${counts.lib} lib file(s)")
     if (isInteractive()) {
         def question = """Successfully created add-on
@@ -327,7 +346,7 @@ with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip
 Also created: 'version.properties' - upload this file to the configured updateUrl!
 
 Open the new add-on map ${releaseMapFile.name}?"""
-        final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
         if (selection == JOptionPane.YES_OPTION) {
             try {
                 c.newMap(releaseMapFile.toURI().toURL())
