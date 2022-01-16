@@ -169,6 +169,11 @@ root.note = withBody '''
         updateUrl: URL of the file containing information (version, download url) on
         the latest version of this add-on. By default: "${homepage}/version.properties"
       </li>
+      <li>
+        addonsMenu: Defines the addon's main menu location, defaults menu 'main_menu_scripting'.
+        Use developer tool menuItemInfo to inspect menu location keys. This attribute is mandatory.
+        Example: '/menu_bar/myAddons'
+      </li>
     </ul>
   </body>
 </html>
@@ -181,10 +186,9 @@ createMissingAttributes(root, [
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
     'updateUrl',
-    ['addonsMenu',	'/menu_bar/edoTools']
+    ['addonsMenu',	'main_menu_scripting']
 ])
-// the standard could be:
-// ['addonsMenu',	'main_menu_scripting']
+
 
 //
 // ============ description ============
