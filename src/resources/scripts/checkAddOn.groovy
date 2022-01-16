@@ -180,8 +180,11 @@ createMissingAttributes(root, [
     'author',
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
-    'updateUrl'
+    'updateUrl',
+    ['addonsMenu',	'/menu_bar/edoTools']
 ])
+// the standard could be:
+// ['addonsMenu',	'main_menu_scripting']
 
 //
 // ============ description ============
@@ -292,6 +295,7 @@ def englishTranslationsNode = findOrCreate(translationsNode, 'en', LEFT)
 createMissingAttributes(englishTranslationsNode, [
     [ 'addons.${name}', addOnName ]
 ])
+// englishTranslationsNode will be accessed later for script name translations
 
 //
 // ============ uninstall ============
@@ -457,7 +461,7 @@ scriptsNode.children.each {
     def menuTitleKey = existingMenuTitleKey ?: "addons.\${name}.${scriptBaseName}"
     createMissingAttributes(it, [
         [ 'menuTitleKey', menuTitleKey ]
-        , ['menuLocation', 'main_menu_scripting/addons.\${name}']
+        , ['menuLocation', '\${addonsMenu}/addons.\${name}']
         , ['executionMode', 'on_single_node']
         , 'keyboardShortcut'
         , ['execute_scripts_without_asking', 'true']
