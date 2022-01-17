@@ -38,6 +38,7 @@ dialogTitle = 'Create release package'
 def expand(Proxy.Node attributeNode, String string) {
     // expands strings like "${name}.groovy"
     string.replaceAll(/\$\{([^}]+)\}/, { match, key -> def v = attributeNode.attributes.map[key]; v ? v : match })
+          .replaceAll(/\$\{([^}]+)\}/, { match, key -> key == 'homepage' ? attributeNode.link.text?: match : match })
 }
 
 // returns the count of scripts added
@@ -266,7 +267,9 @@ private createLatestVersionFile(Proxy.Node releaseMapRoot) {
     def releaseMapFileName = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm").name
     def downloadFile = new File(homepage.path, releaseMapFileName)
     def downloadFilePath = downloadFile.path.replace(File.separator, '/')
-    def downloadUrl = new URL(homepage.protocol, homepage.host, homepage.port, downloadFilePath)
+    def downloadUrlPath = expand(releaseMapRoot, releaseMapRoot['downloadUrl'].toString())
+    def downloadPage = isUrl(downloadUrlPath)?toUrl(releaseMapRoot, downloadUrlPath):null
+    def downloadUrl  = downloadPage ? new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath): new URL(homepage.protocol, homepage.host, homepage.port, downloadFilePath)
     file.text = """version=${version}
 downloadUrl=${downloadUrl}
 freeplaneVersionFrom=${freeplaneVersionFrom}
@@ -275,6 +278,15 @@ freeplaneVersionFrom=${freeplaneVersionFrom}
 
 private URL toUrl(Proxy.Node root, String urlString) {
     return urlString == null ? null : new URL(expand(root, urlString))
+}
+
+private boolean isUrl(String urlString){
+    try{
+        urlString.toURL()
+        return true
+    } catch(e){
+        return false
+    }    
 }
 
 private String shorten(Collection<String> strings, int entrysize) {
@@ -304,6 +316,11 @@ if (!node.map.root.link.text) {
 }
 if (!node.map.isSaved() && !saveOrCancel())
     return
+def downloadUrl = node.map.root['downloadUrl'] ? expand(node.map.root, node.map.root['downloadUrl'].toString()) : null
+if (downloadUrl && !isUrl(downloadUrl)){
+    ui.errorMessage("downloadUrl is not valid - can't continue.")
+    return
+}
 
 def releaseMapFile = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm")
 MapModel releaseMap = createReleaseMap(node)
