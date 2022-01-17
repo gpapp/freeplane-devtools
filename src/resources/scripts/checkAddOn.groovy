@@ -186,6 +186,8 @@ createMissingAttributes(root, [
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
     'updateUrl',
+    'downloadUrl',
+    'changelogUrl',
     ['addonsMenu',	'main_menu_scripting']
 ])
 
@@ -612,6 +614,22 @@ filesToUninstall.addAll(
         "resources/images/${image}"
     }
 )
+
+//
+// ============ actions ============
+//
+def actionsNode = findOrCreate(root, 'actions', RIGHT)
+actionsNode.note = withBody '''
+ Direct links to menu commands
+'''
+def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn']
+actions.each{ acc ->
+    def labelText = textUtils.getText(acc)
+    if (!actionsNode.children.any{it.text == labelText}) {        
+        def n = actionsNode.createChild(labelText)
+        n.link.text = "menuitem:_${acc}_on_single_node"
+    }
+}
 
 //
 // ============ uninstallation rules ============
