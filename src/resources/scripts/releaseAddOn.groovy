@@ -31,10 +31,6 @@ import org.freeplane.features.url.mindmapmode.MFileManager
 import org.freeplane.plugin.script.proxy.NodeProxy
 import org.freeplane.plugin.script.proxy.Proxy
 
-// import javax.swing.*
-// import java.util.zip.ZipEntry
-// import java.util.zip.ZipOutputStream
-
 // script bindings
 errors = []
 dialogTitle = 'Create release package'
@@ -111,7 +107,7 @@ int updateLib(Proxy.Node root) {
     return updateBinaries(root, 'lib')
 }
 
-private int updateBinaries(Proxy.Node root, String nodeName) {
+private updateBinaries(Proxy.Node root, String nodeName) {
     int count = 0
     Proxy.Node parentNode = root.children.find { it.plainText.matches(nodeName) }
     if (!parentNode) {
