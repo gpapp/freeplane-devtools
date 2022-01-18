@@ -263,13 +263,19 @@ private createLatestVersionFile(Proxy.Node releaseMapRoot) {
     def file = new File(mapFile.parent, "version.properties")
     def version = releaseMapRoot['version']
     def freeplaneVersionFrom = releaseMapRoot['freeplaneVersionFrom']
+    //ui.informationMessage("downloadUrl ${releaseMapRoot['downloadUrl']}".toString())
     def homepage = toUrl(releaseMapRoot, releaseMapRoot.link.text)
+    // ui.informationMessage("homepage ${homepage}".toString())
+    def downloadPage = toUrl(releaseMapRoot, releaseMapRoot['downloadUrl'].toString()) ?: homepage
+    // ui.informationMessage("downloadPage ${downloadPage}".toString())
     def releaseMapFileName = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm").name
-    def downloadFile = new File(homepage.path, releaseMapFileName)
+    // ui.informationMessage("releaseMapFileName ${releaseMapFileName}".toString())
+    def downloadFile = new File(downloadPage.path, releaseMapFileName)
+    // ui.informationMessage("downloadFile ${downloadFile}".toString())
     def downloadFilePath = downloadFile.path.replace(File.separator, '/')
-    def downloadUrlPath = expand(releaseMapRoot, releaseMapRoot['downloadUrl'].toString())
-    def downloadPage = isUrl(downloadUrlPath)?toUrl(releaseMapRoot, downloadUrlPath):null
-    def downloadUrl  = downloadPage ? new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath): new URL(homepage.protocol, homepage.host, homepage.port, downloadFilePath)
+    // ui.informationMessage("downloadFilePath ${downloadFilePath}".toString())
+    def downloadUrl  = new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath)
+    // ui.informationMessage("downloadUrl ${downloadUrl}".toString())
     file.text = """version=${version}
 downloadUrl=${downloadUrl}
 freeplaneVersionFrom=${freeplaneVersionFrom}
@@ -277,7 +283,10 @@ freeplaneVersionFrom=${freeplaneVersionFrom}
 }
 
 private URL toUrl(Proxy.Node root, String urlString) {
-    return urlString == null ? null : new URL(expand(root, urlString))
+    if (urlString == null)
+        return null
+    def url = expand(root, urlString)
+    return isUrl(url)? new URL(url) : null
 }
 
 private boolean isUrl(String urlString){
@@ -317,6 +326,7 @@ if (!node.map.root.link.text) {
 if (!node.map.isSaved() && !saveOrCancel())
     return
 def downloadUrl = node.map.root['downloadUrl'] ? expand(node.map.root, node.map.root['downloadUrl'].toString()) : null
+//ui.informationMessage(downloadUrl.toString())
 if (downloadUrl && !isUrl(downloadUrl)){
     ui.errorMessage("downloadUrl is not valid - can't continue.")
     return
@@ -337,6 +347,7 @@ try {
     counts.translations = updateTranslations(releaseMapRoot)
     encodeTranslations(releaseMapRoot)
     createLatestVersionFile(releaseMapRoot)
+    releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()

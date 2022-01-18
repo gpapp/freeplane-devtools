@@ -44,7 +44,10 @@
         updateUrl: URL of the file containing information (version, download url) on the latest version of this add-on. By default: &quot;${homepage}/version.properties&quot;
       </li>
       <li>
-        addonsMenu: Defines the addon's main menu location, defaults menu 'main_menu_scripting'. Use developer tool menuItemInfo to inspect menu location keys. This attribute is mandatory. Example: '/menu_bar/myAddons'
+        addonsMenu: Defines the addon's main menu location, defaults menu 'main_menu_scripting'.<br/>Use developer tool menuItemInfo to inspect menu location keys.<br/>This attribute is mandatory.<br/>Example: '/menu_bar/myAddons'
+      </li>
+      <li>
+        downloadUrl: URL from the place where the AddOn file will be available for downloading.<br/>By default is the same as the homepage.<br/>You can define a different place or a subfolder of the homepage.<br/>Example: &quot;${homepage}/files/&quot;
       </li>
     </ul>
   </body>
@@ -195,7 +198,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="scripts" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="scripts" FOLDED="true" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
