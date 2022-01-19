@@ -132,6 +132,7 @@ private updateBinaries(Proxy.Node root, String nodeName) {
     return count
 }
 
+// TODO: added by gpapp
 int updateTranslations(Proxy.Node root) {
     int filesAdded = 0
     def nodeName = 'translations'
@@ -164,6 +165,7 @@ int updateTranslations(Proxy.Node root) {
                     key, value ->
                         langNode[key] = value
                 }
+                langNode.attributes.optimizeWidths()
             }
             ++filesAdded
         }
@@ -171,21 +173,23 @@ int updateTranslations(Proxy.Node root) {
     return filesAdded
 }
 
-void encodeTranslations(Proxy.Node root) {
-    def nodeName = 'translations'
-    Proxy.Node translationsNode = root.children.find { it.plainText.matches(nodeName) }
-    if (!translationsNode) {
-        errors << "The root node ${root.plainText} has no '$nodeName' child. Please create it or better run 'Check Add-on'"
-        return
-    }
-    translationsNode.children.each { localeNode ->
-        localeNode.attributes.map.each { k, v ->
-            if (v) {
-                localeNode.attributes.set(k, v)
-            }
-        }
-    }
-}
+// TODO: added by gpapp
+    // It seems it does nothing. It seems currently isn't necesary to escapeUtf8 it
+// void encodeTranslations(Proxy.Node root) {
+    // def nodeName = 'translations'
+    // Proxy.Node translationsNode = root.children.find { it.plainText.matches(nodeName) }
+    // if (!translationsNode) {
+        // errors << "The root node ${root.plainText} has no '$nodeName' child. Please create it or better run 'Check Add-on'"
+        // return
+    // }
+    // translationsNode.children.each { localeNode ->
+        // localeNode.attributes.map.each { k, v ->
+            // if (v) {
+                // localeNode.attributes.set(k, v)
+            // }
+        // }
+    // }
+// }
 
 // for topDir='/a/b/c' creates a zip file whose entries' path will start with 'c/'
 byte[] getZipBytes(File topDir) {
@@ -344,8 +348,8 @@ try {
     counts.zips = updateZips(releaseMapRoot)
     counts.images = updateImages(releaseMapRoot)
     counts.lib = updateLib(releaseMapRoot)
-    counts.translations = updateTranslations(releaseMapRoot)
-    encodeTranslations(releaseMapRoot)
+    counts.translations = updateTranslations(releaseMapRoot)     // TODO: added by gpapp
+//    encodeTranslations(releaseMapRoot)                           // TODO: added by gpapp. // edo: it seems it is no longer needed
     createLatestVersionFile(releaseMapRoot)
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
 } catch (Exception e) {
