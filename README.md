@@ -1,16 +1,10 @@
------
-
 # freeplane-devtools
-
------
 
 ## 1. About this fork
 
 In this fork I united the last version from [HaaiHenkie](https://sourceforge.net/u/haaihenkie/profile/) ([v.0.9.27](https://github.com/HaaiHenkie/addons/tree/fix-bug-2847), look this [thread](https://sourceforge.net/p/freeplane/bugs/2847/)) with the [version](https://github.com/gpapp/freeplane-devtools) from [gpapp](https://sourceforge.net/u/gergelypapp/profile/) .
 
 cheers, edo
-
------
 
 ## 2. Description
 
@@ -27,8 +21,6 @@ This add-on collects some utilities that script and/or add-on developers will fi
 
 The functions are available under Tools -> Development Tools
 
------
-
 ## 3. Devtools with property file support
 
 Freeplane devtools enhanced with some translation utilities
@@ -40,8 +32,6 @@ Adds the ability to automatically **load translations** from the addon path when
 If a 'translations' directory exists, all translation nodes will be replaced with the translations in that directory.
 
 Translations must be named as LC.properties and must be in *UTF-8*!
-
------
 
 ## 4. Change Log
 

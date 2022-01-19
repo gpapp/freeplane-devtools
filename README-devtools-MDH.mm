@@ -120,7 +120,7 @@ blockquote {
 </map_styles>
 </hook>
 <node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="right" ID="ID_1638680456" LINK="file:/C:/Users/Edo/Documents/GitHub/freeplane-devtools/README.md">
-<attribute NAME="headersToUnderline" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
+<attribute NAME="headersToUnderline" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
 <attribute NAME="hideFolded" VALUE="false"/>
 <attribute NAME="headerNumbering" VALUE="true"/>
 <attribute NAME="topHeadersNumbered" VALUE="false"/>
