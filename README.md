@@ -2,9 +2,20 @@
 
 ## 1. About this fork
 
+The original **devtools** add-on has been developed and maintained by **Volker Boerchers** ([github](https://github.com/vboerchers), [sourceforge](https://sourceforge.net/u/boercher/profile/)).
+
+And its official websites are:
+
+* description in freeplane wiki:  [DeveloperTools](https://www.freeplane.org/wiki/index.php/Add-ons_%28install%29#Developer_Tools)
+* devtools [ *.addon.mm* files repository](https://sourceforge.net/projects/freeplane/files/addons/devtools/) in sourceforge
+* devtools [ sources repository](https://github.com/freeplane/addons) in github
+ 
+
 In this fork I united the last version from [HaaiHenkie](https://sourceforge.net/u/haaihenkie/profile/) ([v.0.9.27](https://github.com/HaaiHenkie/addons/tree/fix-bug-2847), look this [thread](https://sourceforge.net/p/freeplane/bugs/2847/)) with the [version](https://github.com/gpapp/freeplane-devtools) from [gpapp](https://sourceforge.net/u/gergelypapp/profile/) .
 
-cheers, edo
+bye,
+
+edo
 
 ## 2. Description
 
@@ -91,6 +102,7 @@ The functions are available under Tools -> Development Tools
       * Only if a 'translations' folder exists
       * You have to create a 'translations' folder in your projects folder, if you want to use this feature.
    * This way you can work on the localization with other special tools
+      * I'm using [IniTranslator](https://sourceforge.net/projects/initranslator/) to edit these ```*.properties ``` files, but, as far as I know, there are plenty of different tools to do this.
 * **Import Translation**
    * Imports translations from properties files
       * Only if a 'translations' folder exists

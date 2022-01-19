@@ -143,7 +143,144 @@ blockquote {
   </body>
 </html></richcontent>
 <node TEXT="freeplane-devtools" ID="ID_878825798">
-<node TEXT="About this fork" FOLDED="true" ID="ID_1773039584" VGAP_QUANTITY="2 pt">
+<node TEXT="About this fork" ID="ID_1773039584" VGAP_QUANTITY="2 pt">
+<node TEXT="Markdown document.md" STYLE_REF="MarkdownHelperNode" ID="ID_1325326077">
+<attribute NAME="headersToUnderline" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2"/>
+<attribute NAME="hideFolded" VALUE="false"/>
+<attribute NAME="headerNumbering" VALUE="true"/>
+<attribute NAME="topHeadersNumbered" VALUE="false"/>
+<attribute NAME="topHeaderStartingNumber" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1"/>
+<attribute NAME="fileLinksRelative" VALUE="false"/>
+<attribute NAME="lineOverHeader" VALUE="true"/>
+<attribute NAME="ignoreHeaderDetails" VALUE="true"/>
+<attribute NAME="ignoreHeaderNotes" VALUE="true"/>
+<attribute NAME="ignoreLeafDetails" VALUE="false"/>
+<attribute NAME="ignoreHeaderImageObjects" VALUE="false"/>
+<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.document(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_578025344"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.textBlock(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="the original devtools add-on ..." ID="ID_1536374166"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The original **devtools** add-on has been developed and maintained by **$1** ($2, $3).
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      And its official websites are:
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      * description in freeplane wiki:&nbsp;&nbsp;$4
+    </p>
+    <p>
+      * devtools $5 in sourceforge
+    </p>
+    <p>
+      *&nbsp;devtools $6 in github
+    </p>
+    <p>
+      &nbsp;
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="Volker Boerchers" ID="ID_811540617"/>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1527436201"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="github" ID="ID_1576254181" LINK="https://github.com/vboerchers"/>
+</node>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1229797341"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="sourceforge" ID="ID_92106717" LINK="https://sourceforge.net/u/boercher/profile/"/>
+</node>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1970310322"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="DeveloperTools" ID="ID_243652109" LINK="https://www.freeplane.org/wiki/index.php/Add-ons_%28install%29#Developer_Tools"/>
+</node>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1197989436"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT=" *.addon.mm* files repository" ID="ID_1700300163" LINK="https://sourceforge.net/projects/freeplane/files/addons/devtools/"/>
+</node>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1510123304"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT=" sources repository" ID="ID_1957621554" LINK="https://github.com/freeplane/addons"/>
+</node>
+</node>
+</node>
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_1330088511"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -246,7 +383,8 @@ blockquote {
 </node>
 </node>
 </node>
-<node TEXT="cheers, edo" ID="ID_965908873"/>
+<node TEXT="bye,&#xa;&#xa;edo" ID="ID_965908873"/>
+</node>
 </node>
 <node TEXT="Description" ID="ID_328053546" VGAP_QUANTITY="2 pt">
 <attribute_layout VALUE_WIDTH="100 pt"/>
@@ -411,7 +549,48 @@ blockquote {
 <node TEXT="Only if a &apos;translations&apos; folder exists" ID="ID_673156701"/>
 <node TEXT="You have to create a &apos;translations&apos; folder in your projects folder, if you want to use this feature." ID="ID_358160968"/>
 </node>
-<node TEXT="This way you can work on the localization with other special tools" ID="ID_1552626298"/>
+<node TEXT="This way you can work on the localization with other special tools" ID="ID_1552626298">
+<node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_1998828916"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.textBlock(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="iniTranslator" ID="ID_531297854"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      I'm using $1 to edit these ```*.properties ``` files, but, as far as I know, there are plenty of different tools to do this.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1528686947"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="IniTranslator" ID="ID_1562224910" LINK="https://sourceforge.net/projects/initranslator/"/>
+</node>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="**Import Translation**" ID="ID_1765387863">
 <node TEXT="Imports translations from properties files" ID="ID_920417074">
