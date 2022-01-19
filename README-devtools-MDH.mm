@@ -143,7 +143,7 @@ blockquote {
   </body>
 </html></richcontent>
 <node TEXT="freeplane-devtools" ID="ID_878825798">
-<node TEXT="About this fork" ID="ID_1773039584">
+<node TEXT="About this fork" FOLDED="true" ID="ID_1773039584" VGAP_QUANTITY="2 pt">
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_1330088511"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -251,6 +251,8 @@ blockquote {
 <node TEXT="Description" ID="ID_328053546" VGAP_QUANTITY="2 pt">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="This add-on collects some utilities that script and/or add-on developers will find useful." ID="ID_1307232320"/>
+<node TEXT="The functions are available under Tools -&gt; Development Tools" ID="ID_430754274"/>
+<node TEXT="Features in standard version (v.0.9.27)" ID="ID_80809317">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_243684558"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -262,26 +264,168 @@ blockquote {
     </p>
   </body>
 </html></richcontent>
-<node TEXT="Build add-on: adds all standard nodes, attributes and notes to the current map. Can be used with an empty Map to create a basic add-on." ID="ID_531867304"/>
-<node TEXT="Package add-on for release: It copies the &lt;addon&gt;.mm to &lt;addon&gt;-&lt;version&gt;.mm and updates the script node&apos;s context from the files lying around." ID="ID_631483484"/>
-<node TEXT="Generate add-on documentation: Creates a snippet for the Freeplane add-ons wiki page." ID="ID_881878566"/>
-<node TEXT="Insert binary: Asks for a file to insert as text of the current node (BASE64 encoded)." ID="ID_29718152"/>
-<node TEXT="Extract binary: Asks for a file to extract the BASE64 encoded binary in the current node to." ID="ID_1878694937"/>
-<node TEXT="Encode translation: Encode non-ASCII characters so that they don&apos;t get scrambled while packaging or installation. This function is included in Package add-on for release so you don&apos;t need this function." ID="ID_832357927"/>
-<node TEXT="Menu item info: Shows technical details about a selected menu item." ID="ID_911767317"/>
-<node TEXT="freeplane.dsld: Adds Eclipse editor support for predefined script bindings such as node, c, ui, textUtils, ..." ID="ID_329101298"/>
+<node TEXT="**Build add-on:**" ID="ID_531867304">
+<node TEXT="adds all standard nodes, attributes and notes to the current map. Can be used with an empty Map to create a basic add-on." ID="ID_968531831"/>
 </node>
-<node TEXT="The functions are available under Tools -&gt; Development Tools" ID="ID_430754274"/>
+<node TEXT="**Package add-on for release:**" ID="ID_631483484">
+<node TEXT="It copies the &lt;addon&gt;.mm to &lt;addon&gt;-&lt;version&gt;.mm and updates the script node&apos;s context from the files lying around." ID="ID_42200146"/>
 </node>
-<node TEXT="Devtools with property file support" ID="ID_269832426">
+<node TEXT="**Generate add-on documentation:**" ID="ID_881878566">
+<node TEXT="Creates a snippet for the Freeplane add-ons wiki page." ID="ID_102275467"/>
+</node>
+<node TEXT="**Insert binary:**" ID="ID_29718152">
+<node TEXT="Asks for a file to insert as text of the current node (BASE64 encoded)." ID="ID_926320487"/>
+</node>
+<node TEXT="**Extract binary:**" ID="ID_1878694937">
+<node TEXT="Asks for a file to extract the BASE64 encoded binary in the current node to." ID="ID_1650744343"/>
+</node>
+<node TEXT="**Encode translation:**" ID="ID_832357927">
+<node TEXT="Encode non-ASCII characters so that they don&apos;t get scrambled while packaging or installation. This function is included in Package add-on for release so **you don&apos;t need this function**." ID="ID_1271991354"/>
+</node>
+<node TEXT="**Menu item info:**" ID="ID_911767317">
+<node TEXT="Shows technical details about a selected menu item." ID="ID_1786154537"/>
+</node>
+<node TEXT="**freeplane.dsld:**" ID="ID_329101298">
+<node TEXT="Adds **Eclipse** editor support for predefined script bindings such as node, c, ui, textUtils, ..." ID="ID_975555696"/>
+</node>
+</node>
+</node>
+<node TEXT="Features added by gpapp version" ID="ID_799846000">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_635378375"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="**Devtools with property file support**" ID="ID_664281832">
 <node TEXT="Freeplane devtools enhanced with some translation utilities" ID="ID_38904383"/>
-<node TEXT="Purpose" ID="ID_140492213">
+</node>
+<node TEXT="**Purpose**" ID="ID_140492213">
 <node TEXT="Adds the ability to automatically **load translations** from the addon path when packaging." ID="ID_1130666003"/>
 <node TEXT="If a &apos;translations&apos; directory exists, all translation nodes will be replaced with the translations in that directory." ID="ID_352190165"/>
 <node TEXT="Translations must be named as LC.properties and must be in *UTF-8*!" ID="ID_427054379"/>
 </node>
 </node>
+</node>
+<node TEXT="Features added by this version" ID="ID_147925723">
+<node TEXT="changes to add-on parameters" ID="ID_52583889">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1819954991"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="**homepage**" ID="ID_1347654047">
+<node TEXT="**change:** It is a new property" ID="ID_889718611"/>
+<node TEXT="Its value is the URL address taken from the **link of the root node**" ID="ID_751604294"/>
+<node TEXT="This way you can use **&apos;homepage&apos;** to define **other** add-on parameters.&#xa;For example:" ID="ID_1041894670">
+<node TEXT="&quot;${homepage}/version.properties&quot;" ID="ID_1405636143"/>
+</node>
+</node>
+<node TEXT="**downloadUrl**" ID="ID_528003529">
+<font BOLD="false"/>
+<node TEXT="URL from the place where the **AddOn file** will be available for **downloading**." ID="ID_607904702"/>
+<node TEXT="By **default** is the same as the **homepage**." ID="ID_1713248622"/>
+<node TEXT="**changes:**" ID="ID_982164885">
+<node TEXT="You can define a different place or a subfolder of the homepage" ID="ID_1558216788"/>
+<node TEXT="You can use other properties when defining the URL" ID="ID_241410220"/>
+</node>
+<node TEXT="Example:" ID="ID_1464546567">
+<node TEXT="&quot;${homepage}/files/&quot;" ID="ID_327099440"/>
+</node>
+<node TEXT="Example for a **Github add-on repository**:" ID="ID_442340319">
+<node TEXT="${homepage}/releases/download/${version}/" ID="ID_231706711"/>
+</node>
+</node>
+<node TEXT="**updateUrl**" ID="ID_1023407019">
+<font BOLD="false"/>
+<node TEXT="URL of the file containing information (version, download url) on the latest version of this add-on." ID="ID_1374206540"/>
+<node TEXT="By default: &quot;${homepage}/version.properties&quot;" ID="ID_1663700850"/>
+<node ID="ID_1564084926" TREE_ID="ID_982164885">
+<node ID="ID_477948040" TREE_ID="ID_1558216788"/>
+<node ID="ID_79305837" TREE_ID="ID_241410220"/>
+</node>
+<node TEXT="Example:" ID="ID_106950165">
+<node TEXT="&quot;${homepage}/files/version.properties&quot;" ID="ID_1403369817"/>
+</node>
+<node TEXT="Example for a **Github add-on repository**:" ID="ID_1064675134">
+<node TEXT="${homepage}/releases/latest/download/version.properties" ID="ID_269263585"/>
+</node>
+</node>
+<node TEXT="**addonsMenu**" ID="ID_1344278821">
+<font BOLD="false"/>
+<node TEXT="**change:** It is a new property" ID="ID_1228704494"/>
+<node TEXT="It defines the addon&apos;s **main menu** location" ID="ID_758674665"/>
+<node TEXT="By **default** it&apos;s menu **&apos;main_menu_scripting&apos;**" ID="ID_225607919"/>
+<node TEXT="Use developer tool **menuItemInfo** to inspect menu location keys" ID="ID_613206996"/>
+<node TEXT="This attribute is mandatory" ID="ID_1103289059"/>
+<node TEXT="Example:" ID="ID_1203193911">
+<node TEXT="&apos;/menu_bar/myAddons&apos;" ID="ID_574109293"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="&quot;actions&quot; node" ID="ID_1098166546">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1069431078"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="When building a new add-on, now it adds a new &quot;**action**&quot; node." ID="ID_44269758"/>
+<node TEXT="This node has two children nodes with links to the &quot;**Build add-on**&quot; and &quot;**Package add-on for publication**&quot; menu commands." ID="ID_1695842943"/>
+<node TEXT="This node is just to facilitate the access to these commands." ID="ID_677846402"/>
+</node>
+</node>
+<node TEXT="new features" ID="ID_992339106">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1977967499"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="**Export Translation**" ID="ID_167125793">
+<node TEXT="Exports translations as properties files to &apos;translations&apos; folder" ID="ID_1342955431">
+<node TEXT="Only if a &apos;translations&apos; folder exists" ID="ID_673156701"/>
+<node TEXT="You have to create a &apos;translations&apos; folder in your projects folder, if you want to use this feature." ID="ID_358160968"/>
+</node>
+<node TEXT="This way you can work on the localization with other special tools" ID="ID_1552626298"/>
+</node>
+<node TEXT="**Import Translation**" ID="ID_1765387863">
+<node TEXT="Imports translations from properties files" ID="ID_920417074">
+<node TEXT="Only if a &apos;translations&apos; folder exists" ID="ID_1406237111"/>
+</node>
+<node TEXT="This way you can update the add-on with the localization files" ID="ID_1613832037"/>
+<node TEXT="This feature is also automatically applied when packaging the add-on.&#xa;Added by GPAPP" ID="ID_133914881"/>
+</node>
+</node>
+</node>
+</node>
+</node>
 <node TEXT="Change Log" ID="ID_309963735">
+<icon BUILTIN="emoji-26D4"/>
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -293,10 +437,10 @@ blockquote {
     </p>
   </body>
 </html></richcontent>
-<node TEXT="v0.9.28" ID="ID_1070972671">
+<node TEXT="v0.9.28" FOLDED="true" ID="ID_1070972671">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="Merged with GPAPP devtools version" ID="ID_81663064"/>
-<node TEXT="added improved downloadUrl" ID="ID_438023883"/>
+<node TEXT="Added improved downloadUrl" ID="ID_438023883"/>
 <node TEXT="Improved updateUrl" ID="ID_1892062819"/>
 <node TEXT="Added addonsMenu" ID="ID_1630300171"/>
 <node TEXT="Added &quot;actions&quot; node with links to Build and Package commands" ID="ID_532968437"/>
