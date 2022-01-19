@@ -13,6 +13,8 @@ And its official websites are:
 
 In this fork I united the last version from [HaaiHenkie](https://sourceforge.net/u/haaihenkie/profile/) ([v.0.9.27](https://github.com/HaaiHenkie/addons/tree/fix-bug-2847), look this [thread](https://sourceforge.net/p/freeplane/bugs/2847/)) with the [version](https://github.com/gpapp/freeplane-devtools) from [gpapp](https://sourceforge.net/u/gergelypapp/profile/) .
 
+The instalable file (```devtools-v0.9.28.addon.mm```) of the latest version of the this fork can be downloaded from [here](https://github.com/EdoFro/freeplane-devtools/releases/latest/).
+
 bye,
 
 edo

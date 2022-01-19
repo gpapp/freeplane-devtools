@@ -11,7 +11,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-31.5 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-30.75 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -166,8 +166,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.document(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_578025344"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -210,8 +209,7 @@ blockquote {
       &nbsp;
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Volker Boerchers" ID="ID_811540617"/>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1527436201"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -223,8 +221,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="github" ID="ID_1576254181" LINK="https://github.com/vboerchers"/>
 </node>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1229797341"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -383,6 +380,51 @@ blockquote {
 </node>
 </node>
 </node>
+<node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_829915250"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.textBlock(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="download" ID="ID_1900518132"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The instalable file (```$1-$2.addon.mm```) of the latest version of the this fork can be downloaded from $3.
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="devtools" ID="ID_954321371"/>
+<node TEXT="using formula in note of this node to get vX.X.X from list in &apos;change log&apos; node" ID="ID_1280078698" LINK="#ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
+    <text>=node.link?.node?.children?.first()?.text?:&apos;vX.X.X&apos;</text>
+</richcontent>
+</node>
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1225152564"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.webLink(node)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="here" ID="ID_328387021" LINK="https://github.com/EdoFro/freeplane-devtools/releases/latest/"/>
+</node>
+</node>
+</node>
 <node TEXT="bye,&#xa;&#xa;edo" ID="ID_965908873"/>
 </node>
 </node>
@@ -439,8 +481,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.list(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="**Devtools with property file support**" ID="ID_664281832">
 <node TEXT="Freeplane devtools enhanced with some translation utilities" ID="ID_38904383"/>
 </node>
@@ -463,8 +504,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.list(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="**homepage**" ID="ID_1347654047">
 <node TEXT="**change:** It is a new property" ID="ID_889718611"/>
 <node TEXT="Its value is the URL address taken from the **link of the root node**" ID="ID_751604294"/>
@@ -560,8 +600,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.textBlock(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="iniTranslator" ID="ID_531297854"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -572,8 +611,7 @@ blockquote {
       I'm using $1 to edit these ```*.properties ``` files, but, as far as I know, there are plenty of different tools to do this.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1528686947"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -584,8 +622,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="IniTranslator" ID="ID_1562224910" LINK="https://sourceforge.net/projects/initranslator/"/>
 </node>
 </node>
