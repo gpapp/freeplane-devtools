@@ -4,14 +4,14 @@
 <node LOCALIZED_TEXT="new_mindmap" FOLDED="false" ID="ID_696401721" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
-    <properties mapUsesOwnSaveOptions="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" followedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" save_folding="default" associatedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" save_modification_times="false" fit_to_viewport="false" followedMapLastTime="1642350882829" save_last_visited_node="default" show_note_icons="true"/>
+    <properties mapUsesOwnSaveOptions="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" followedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" save_folding="default" associatedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" fit_to_viewport="false" save_modification_times="false" followedMapLastTime="1642350882829" save_last_visited_node="default" show_note_icons="true" show_notes_in_map="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_1758066171" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-32.25 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-31.5 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -119,13 +119,6 @@ blockquote {
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="README.md" POSITION="right" ID="ID_1216315313" LINK="file:/C:/Users/Edo/Documents/GitHub/freeplane-devtools/README.md">
-<attribute NAME="lastAccessTime" VALUE="14-08-20 21:28" OBJECT="org.freeplane.features.format.FormattedDate|2020-08-14T21:28-0400|datetime"/>
-<attribute NAME="lastModifiedTime" VALUE="14-08-20 21:28" OBJECT="org.freeplane.features.format.FormattedDate|2020-08-14T21:28-0400|datetime"/>
-<attribute NAME="creationTime" VALUE="20-07-20 10:32" OBJECT="org.freeplane.features.format.FormattedDate|2020-07-20T10:32-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="3.469" OBJECT="org.freeplane.features.format.FormattedNumber|3469|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown"/>
-</node>
 <node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="right" ID="ID_1638680456" LINK="file:/C:/Users/Edo/Documents/GitHub/freeplane-devtools/README.md">
 <attribute NAME="headersToUnderline" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
 <attribute NAME="hideFolded" VALUE="false"/>
@@ -161,8 +154,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.textBlock(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node ID="ID_1366450882"><richcontent TYPE="NODE">
 
 <html>
@@ -175,7 +167,6 @@ blockquote {
     </p>
   </body>
 </html>
-
 </richcontent>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -187,8 +178,7 @@ blockquote {
       In this fork I united the last version from $1 ($5, look this $2) with the $3 from $4 .
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_867484520"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -199,8 +189,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="HaaiHenkie" ID="ID_1308413620" LINK="https://sourceforge.net/u/haaihenkie/profile/"/>
 </node>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1348033070"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -239,8 +228,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="gpapp" ID="ID_475666022" LINK="https://sourceforge.net/u/gergelypapp/profile/"/>
 </node>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1254919849"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -253,8 +241,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="v.0.9.27" ID="ID_1028684102" LINK="https://github.com/HaaiHenkie/addons/tree/fix-bug-2847"/>
 </node>
 </node>
@@ -274,8 +261,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.list(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Build add-on: adds all standard nodes, attributes and notes to the current map. Can be used with an empty Map to create a basic add-on." ID="ID_531867304"/>
 <node TEXT="Package add-on for release: It copies the &lt;addon&gt;.mm to &lt;addon&gt;-&lt;version&gt;.mm and updates the script node&apos;s context from the files lying around." ID="ID_631483484"/>
 <node TEXT="Generate add-on documentation: Creates a snippet for the Freeplane add-ons wiki page." ID="ID_881878566"/>
@@ -306,8 +292,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.list(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="v0.9.28" ID="ID_1070972671">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="Merged with GPAPP devtools version" ID="ID_81663064"/>
@@ -429,367 +414,8 @@ blockquote {
 </node>
 </node>
 </node>
-<node TEXT="mejorar en MDH" POSITION="right" ID="ID_517741661">
-<node TEXT="lógica en MDList" ID="ID_130725341">
-<node TEXT="Caso 1: listas y sublistas" ID="ID_1281649011">
-<icon BUILTIN="button_ok"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      funciona OK
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" FOLDED="true" ID="ID_1316981988">
-<icon BUILTIN="emoji-1F522"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      = edofro.MarkDownHelper.MDH.list(node)
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="**import folder structure**" STYLE_REF="fullMarkDown" ID="ID_1805808672">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="you can import the folder structure of any folder in your drive" STYLE_REF="fullMarkDown" ID="ID_996429213"/>
-</node>
-<node TEXT="**import only new files and folders**" STYLE_REF="fullMarkDown" ID="ID_758208719">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="After the first import, Map-Drive-Inator imports only the new files and folders created in your drive without duplicating the allready existing one." STYLE_REF="fullMarkDown" ID="ID_409211500"/>
-</node>
-<node TEXT="**alerts about missing files**" STYLE_REF="fullMarkDown" ID="ID_222950387">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="It alerts if any node links to a deleted or moved file." STYLE_REF="fullMarkDown" ID="ID_83578922"/>
-<node TEXT="For example, if another program deletes, moves or renames a file, then MDI will alert you that a link in a node points to a missing file." STYLE_REF="fullMarkDown" ID="ID_1986660163"/>
-</node>
-<node TEXT="**move file from one folder to another**" STYLE_REF="fullMarkDown" ID="ID_1640712461">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="if you move a &apos;file&apos; node in your mindmap from one &apos;folder&apos; node to another, the file gets moved in your drive also" STYLE_REF="fullMarkDown" ID="ID_1281773869"/>
-</node>
-<node TEXT="**create new folders**" STYLE_REF="fullMarkDown" ID="ID_479219108">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="you can create nodes as folders in your map and move file nodes in it. MDI then creates the folders and moves the files into them." STYLE_REF="fullMarkDown" ID="ID_1180543561"/>
-</node>
-<node TEXT="**rename files**" STYLE_REF="fullMarkDown" ID="ID_1933922688">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="if you modify the text of a file node, the file in the drive gets also renamed to this new text" STYLE_REF="fullMarkDown" ID="ID_544868358"/>
-</node>
-<node TEXT="**rename folders**" STYLE_REF="fullMarkDown" ID="ID_598641548">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="if you modify the text of a folder node, the folder in the drive gets also renamed to this new text" STYLE_REF="fullMarkDown" ID="ID_1804638879"/>
-</node>
-<node TEXT="**move *outside files* into the project**" STYLE_REF="fullMarkDown" ID="ID_1464194638">
-<icon BUILTIN="emoji-1F537"/>
-<node TEXT="if you paste nodes with links to files that are outside of your base folder, MDI move them to their new position in your folder structure" STYLE_REF="fullMarkDown" ID="ID_785060439"/>
-</node>
-<node TEXT="use copy of a folder in multiple positions in the map, but has to remain in the same path position." STYLE_REF="fullMarkDown" ID="ID_456026938">
-<icon BUILTIN="emoji-1F537"/>
-</node>
-</node>
-</node>
-<node TEXT="" ID="ID_1290955519">
-<hook NAME="FirstGroupNode"/>
-</node>
-<node TEXT="Caso 2: si nodo posee nota -&gt; se ignora nodo.text y details y se usa sólo nota" ID="ID_1240543728">
-<icon BUILTIN="button_ok"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      funciona OK
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" FOLDED="true" ID="ID_1408985523">
-<icon BUILTIN="emoji-1F522"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      = edofro.MarkDownHelper.MDH.list(node)
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="**imp. folder struct**" STYLE_REF="fullMarkDown" ID="ID_877351220"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**import folder structure**  
-you can import the folder structure of any folder in your drive</text>
-</richcontent>
-</node>
-<node TEXT="**imp. only new **" STYLE_REF="fullMarkDown" ID="ID_878429536"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**import only new files and folders**  
-After the first import, Map-Drive-Inator imports only the new files and folders created in your drive without duplicating the allready existing one.</text>
-</richcontent>
-</node>
-<node TEXT="**alerts missing files**" STYLE_REF="fullMarkDown" ID="ID_638251427"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**alerts about missing files**  
-It alerts if any node links to a deleted or moved file.  
-For example, if another program deletes, moves or renames a file, then MDI will alert you that a link in a node points to a missing file.</text>
-</richcontent>
-</node>
-<node TEXT="**move file**" STYLE_REF="fullMarkDown" ID="ID_1836487415"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**move file from one folder to another**  
-if you move a &apos;file&apos; node in your mindmap from one &apos;folder&apos; node to another, the file gets moved in your drive also</text>
-</richcontent>
-</node>
-<node TEXT="**create new folders**" STYLE_REF="fullMarkDown" ID="ID_768489316"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**create new folders**  
-you can create nodes as folders in your map and move file nodes in it. MDI then creates the folders and moves the files into them.</text>
-</richcontent>
-<richcontent CONTENT-TYPE="plain/" TYPE="DETAILS">
-    <text>oración en detalles que debe ser ignorada</text>
-</richcontent>
-<node TEXT="un subpunto sin nota ni detalles" ID="ID_1439722777"/>
-<node TEXT="un subpunto sin nota con detalles" ID="ID_53469333">
-<icon BUILTIN="broken-line"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      oración en detalles que NO debe ser ignorada
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="un subpunto con nota y con detalles" ID="ID_1366578258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      este subpunto se toma de la nota
-    </p>
-    <p>
-      como todo un párrafo
-    </p>
-  </body>
-</html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      oración en detalles que debe ser ignorada
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
-<node TEXT="**rename files**" STYLE_REF="fullMarkDown" ID="ID_472427931"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**rename files**  
-if you modify the text of a file node, the file in the drive gets also renamed to this new text</text>
-</richcontent>
-</node>
-<node TEXT="**rename folders**" STYLE_REF="fullMarkDown" ID="ID_258525056"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**rename folders**  
-if you modify the text of a folder node, the folder in the drive gets also renamed to this new text</text>
-</richcontent>
-</node>
-<node TEXT="**move *outside files* into project**" STYLE_REF="fullMarkDown" ID="ID_1295988778"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>**move *outside files* into the project**  
-if you paste nodes with links to files that are outside of your base folder, MDI move them to their new position in your folder structure</text>
-</richcontent>
-</node>
-<node TEXT="use copy of a folder ..." STYLE_REF="fullMarkDown" ID="ID_16134887"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
-    <text>use copy of a folder in multiple positions in the map, but has to remain in the same path position.</text>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="CAso 3: si nodo no posee nota -&gt; detalles deben unirse a texto del nodo como saltos de línea( no salto de párrafo)" ID="ID_787585930">
-<icon BUILTIN="messagebox_warning"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      actualmente ignora los detalles
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" FOLDED="true" ID="ID_1526705529">
-<icon BUILTIN="emoji-1F522"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      = edofro.MarkDownHelper.MDH.list(node)
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="**import folder structure**" STYLE_REF="fullMarkDown" ID="ID_439409932"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      you can import the folder structure of any folder in your drive
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**import only new files and folders**" STYLE_REF="fullMarkDown" ID="ID_1502048374"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      After the first import, Map-Drive-Inator imports only the new files and folders created in your drive without duplicating the allready existing one.
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**alerts about missing files**" STYLE_REF="fullMarkDown" ID="ID_1560708408"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      It alerts if any node links to a deleted or moved file.
-    </p>
-    <p>
-      For example, if another program deletes, moves or renames a file, then MDI will alert you that a link in a node points to a missing file.
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**move file from one folder to another**" STYLE_REF="fullMarkDown" ID="ID_746810402"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      if you move a 'file' node in your mindmap from one 'folder' node to another, the file gets moved in your drive also
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**create new folders**" STYLE_REF="fullMarkDown" ID="ID_1233632095"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      you can create nodes as folders in your map and move file nodes in it. MDI then creates the folders and moves the files into them.
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="un subpunto sin nota ni detalles" ID="ID_1931732129"/>
-<node TEXT="un subpunto sin nota con detalles" ID="ID_563451130">
-<icon BUILTIN="broken-line"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      oración en detalles que NO debe ser ignorada
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="un subpunto con nota y con detalles" ID="ID_315464930"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      este subpunto se toma de la nota
-    </p>
-    <p>
-      como todo un párrafo
-    </p>
-  </body>
-</html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      oración en detalles que debe ser ignorada
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
-<node TEXT="**rename files**" STYLE_REF="fullMarkDown" ID="ID_1475270470"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      if you modify the text of a file node, the file in the drive gets also renamed to this new text
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**rename folders**" STYLE_REF="fullMarkDown" ID="ID_464540925"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      if you modify the text of a folder node, the folder in the drive gets also renamed to this new text
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="**move *outside files* into the project**" STYLE_REF="fullMarkDown" ID="ID_1017033603"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      if you paste nodes with links to files that are outside of your base folder, MDI move them to their new position in your folder structure
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="use copy of a folder in multiple positions in the map, but has to remain in the same path position." STYLE_REF="fullMarkDown" ID="ID_819663908"/>
-</node>
-</node>
-<node TEXT="" ID="ID_1953663053">
-<hook NAME="SummaryNode"/>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Estos dos deberían verse iguales&#xa;(renderear lo mismo)" ID="ID_29377006"/>
-</node>
-</node>
+<node TEXT="**IMPORTANT**:  &#xa;This map needs that the **MarkdownHelper** add-on is installed to work properly." LOCALIZED_STYLE_REF="styles.important" POSITION="left" ID="ID_1035125343" ICON_SIZE="96 pt" BACKGROUND_COLOR="#ffff00" STYLE="rectangle" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="10 pt" FORMAT="markdownPatternFormat" BORDER_WIDTH="3 px" MAX_WIDTH="13 cm">
+<font SIZE="18" BOLD="false"/>
 </node>
 </node>
 </map>
