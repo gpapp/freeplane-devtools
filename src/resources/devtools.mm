@@ -1,6 +1,6 @@
 <map version="freeplane 1.9.8">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
-<node TEXT="devtools" FOLDED="false" ID="ID_1723255651" LINK="https://sourceforge.net/projects/freeplane/files/addons/devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
+<node TEXT="devtools" FOLDED="false" ID="ID_1723255651" LINK="https://github.com/EdoFro/freeplane-devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="179.99999 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
@@ -8,9 +8,9 @@
 <attribute NAME="author" VALUE="Volker Börchers, Henk van den Akker, Gergely Papp, Edo Frohlich"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.8.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
-<attribute NAME="updateUrl" VALUE=""/>
+<attribute NAME="updateUrl" VALUE="${homepage}/releases/latest/download/version.properties"/>
 <attribute NAME="addonsMenu" VALUE="main_menu_scripting"/>
-<attribute NAME="downloadUrl" VALUE=""/>
+<attribute NAME="downloadUrl" VALUE="${homepage}/releases/download/${version}/"/>
 <attribute NAME="changelogUrl" VALUE=""/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -54,7 +54,7 @@
 </html>
 </richcontent>
 <hook NAME="MapStyle" zoom="0.909">
-    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="default"/>
+    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="default"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_826352276" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -136,7 +136,8 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node ID="ID_1187826020" BACKGROUND_COLOR="#ffff75" VSHIFT_QUANTITY="2.25 pt"><richcontent TYPE="NODE">
 
@@ -197,7 +198,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="scripts" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="scripts" FOLDED="true" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -312,7 +313,8 @@
       &nbsp;&nbsp;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="checkAddOn.groovy" ID="ID_1651569668"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -519,7 +521,8 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="v0.9" FOLDED="true" ID="ID_781192802">
 <node TEXT="Initial version" ID="ID_1996473369"/>
 </node>
@@ -654,7 +657,8 @@
       The License text has to be entered as a child of the <i>'license'</i>&nbsp;node, either as plain text or as HTML.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 2 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1912443753"/>
 </node>
@@ -671,7 +675,8 @@
       <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node.</font>
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 <node TEXT="default.properties" POSITION="left" ID="ID_1363888784">
@@ -695,7 +700,8 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node TEXT="translations" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -718,7 +724,8 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="de" ID="ID_843180817">
 <attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="175.49999 pt"/>
 <attribute NAME="addons.${name}.encodeTranslations" VALUE="\u00DCbersetzungen kodieren"/>
@@ -780,7 +787,8 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout NAME_WIDTH="38.25 pt" VALUE_WIDTH="350.99999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/addOnDoc.groovy"/>
@@ -831,7 +839,8 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="scripts" ID="ID_929040161"/>
 </node>
 <node TEXT="lib" POSITION="right" ID="ID_492204493"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -868,7 +877,8 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 <node TEXT="images" POSITION="right" ID="ID_723709077"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -901,7 +911,8 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&nbsp;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="${name}.png" ID="ID_1002402838"/>
 <node TEXT="${name}-icon.png" ID="ID_1000617651">
 <attribute_layout VALUE_WIDTH="100 pt"/>
@@ -918,7 +929,8 @@
   <body>
     Direct links to menu commands
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Build add-on" ID="ID_1113925331" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_980118363" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 </node>
