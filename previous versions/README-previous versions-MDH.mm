@@ -11,7 +11,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-31.5 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-30.75 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -147,8 +147,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.textBlock(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="about this version" ID="ID_618401956"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -165,8 +164,7 @@ blockquote {
       Its source code is located in its $6 and has a $7 .
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Henk van den Akker" ID="ID_1992804764"/>
 <node TEXT="haaihenkie" ID="ID_543717335"/>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1394870618"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -179,8 +177,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="github" ID="ID_154382738" LINK="https://github.com/HaaiHenkie"/>
 </node>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_877004481"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -206,8 +203,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="#2847 Devtools&apos; checkAddOn.groovy not compatible with Gradle plugin&apos;s directory structure" ID="ID_843234771" LINK="https://sourceforge.net/p/freeplane/bugs/2847/">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
@@ -222,8 +218,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Github branch repository" ID="ID_355175643" LINK="https://github.com/HaaiHenkie/addons/tree/fix-bug-2847"/>
 </node>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_329809978"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -236,14 +231,13 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="related pull request" ID="ID_500442164" LINK="https://github.com/freeplane/addons/pull/10"/>
 </node>
 </node>
 </node>
 </node>
-<node TEXT="devtools.addon.mm" ID="ID_1052437694">
+<node TEXT="devtools-v2.1.2.addon.mm" ID="ID_658170501">
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_790596695"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -277,8 +271,7 @@ blockquote {
       It's description is &quot;**$7**&quot;.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Gergely Papp" ID="ID_1867012499"/>
 <node TEXT="gpapp" ID="ID_198464624"/>
 <node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1255765970"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
