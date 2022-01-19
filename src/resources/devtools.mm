@@ -2,10 +2,10 @@
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="devtools" FOLDED="false" ID="ID_1723255651" LINK="https://sourceforge.net/projects/freeplane/files/addons/devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
-<attribute_layout NAME_WIDTH="96 pt" VALUE_WIDTH="96 pt"/>
+<attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="179.99999 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
 <attribute NAME="version" VALUE="v0.9.28"/>
-<attribute NAME="author" VALUE="Volker Börchers, Gergely Papp, Edo F"/>
+<attribute NAME="author" VALUE="Volker Börchers, Henk van den Akker, Gergely Papp, Edo Frohlich"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.8.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
 <attribute NAME="updateUrl" VALUE=""/>
@@ -198,7 +198,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="scripts" FOLDED="true" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="scripts" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -486,8 +486,32 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
+<node TEXT="exportTranslations.groovy" ID="ID_198520850">
+<attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.exportTranslations"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="changes" FOLDED="true" POSITION="left" ID="ID_309963735"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="importTranslations.groovy" ID="ID_1737295547">
+<attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.importTranslations"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+</node>
+<node TEXT="changes" POSITION="left" ID="ID_309963735"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -605,6 +629,17 @@
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 </node>
+<node TEXT="v0.9.28" ID="ID_1070972671">
+<attribute_layout VALUE_WIDTH="100 pt"/>
+<node TEXT="Merged with GPAPP devtools version" ID="ID_81663064"/>
+<node TEXT="added improved downloadUrl" ID="ID_438023883"/>
+<node TEXT="Improved updateUrl" ID="ID_1892062819"/>
+<node TEXT="Added addonsMenu" ID="ID_1630300171"/>
+<node TEXT="Added &quot;actions&quot; node with links to Build and Package commands" ID="ID_532968437"/>
+<node TEXT="Added script &quot;exportTranslation&quot;" ID="ID_1550892273"/>
+<node TEXT="Added script &quot;importTranslation&quot;" ID="ID_40737250"/>
+<node TEXT="Added spanish translation" ID="ID_1040264212"/>
+</node>
 </node>
 <node TEXT="license" FOLDED="true" POSITION="left" ID="ID_770036552"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -691,37 +726,55 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_306398849">
-<attribute_layout NAME_WIDTH="138.75 pt" VALUE_WIDTH="138.75 pt"/>
-<attribute NAME="addons.${name}" VALUE="Developer Tools"/>
-<attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
-<attribute NAME="addons.${name}.releaseAddOn" VALUE="Package add-on for publication"/>
-<attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
-<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
-<attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
-<attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
-<attribute NAME="addons.${name}.encodeTranslations" VALUE="Encode translations"/>
-</node>
-<node TEXT="de" ID="ID_1406372206">
-<attribute_layout NAME_WIDTH="138.75 pt" VALUE_WIDTH="138.75 pt"/>
-<attribute NAME="addons.${name}" VALUE="Entwicklungswerkzeuge"/>
-<attribute NAME="addons.${name}.checkAddOn" VALUE="Komplettiere Add-on"/>
-<attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on-Package erzeugen"/>
-<attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on-Dokumentation erzeugen"/>
-<attribute NAME="addons.${name}.menuItemInfo" VALUE="Men\u00FCeintrag-Details"/>
-<attribute NAME="addons.${name}.insertBinary" VALUE="Bin\u00E4rdatei einf\u00FCgen"/>
-<attribute NAME="addons.${name}.extractBinary" VALUE="Knoten in Bin\u00E4rdatei extrahieren"/>
+<node TEXT="de" ID="ID_843180817">
+<attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="175.49999 pt"/>
 <attribute NAME="addons.${name}.encodeTranslations" VALUE="\u00DCbersetzungen kodieren"/>
+<attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on-Package erzeugen"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Knoten in Bin\u00E4rdatei extrahieren"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on-Dokumentation erzeugen"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="\u00DCbersetzungen importieren"/>
+<attribute NAME="addons.${name}.checkAddOn" VALUE="Komplettiere Add-on"/>
+<attribute NAME="﻿addons.${name}.insertBinary" VALUE="Binärdatei einfügen"/>
+<attribute NAME="addons.${name}.menuItemInfo" VALUE="Men\u00FCeintrag-Details"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="\u00DCbersetzungen exportieren"/>
+<attribute NAME="addons.${name}" VALUE="Entwicklungswerkzeuge"/>
 </node>
-<node TEXT="nl" ID="ID_1871441757">
-<attribute_layout NAME_WIDTH="138.75 pt" VALUE_WIDTH="138.75 pt"/>
+<node TEXT="en" ID="ID_491236257">
+<attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="173.99999 pt"/>
+<attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="Encode translations"/>
+<attribute NAME="addons.${name}.releaseAddOn" VALUE="Package add-on for publication"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="Import Translations"/>
+<attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
+<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="Export Translations"/>
+<attribute NAME="addons.${name}" VALUE="Developer Tools"/>
+<attribute NAME="addons.${name}.xx" VALUE=""/>
+</node>
+<node TEXT="es" ID="ID_1351644680">
+<attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="185.99999 pt"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="Codificar traducciones"/>
+<attribute NAME="addons.${name}.releaseAddOn" VALUE="Empaquetar add-on para su publicación"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Extraer binario"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Generar documentación de add-on"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="Importar traducciones"/>
+<attribute NAME="addons.${name}.checkAddOn" VALUE="Construir add-on"/>
+<attribute NAME="﻿addons.${name}.insertBinary" VALUE="Insertar binario"/>
+<attribute NAME="addons.${name}.menuItemInfo" VALUE="Información de ítem de menú"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="Exportar traducciones"/>
+<attribute NAME="addons.${name}" VALUE="Herramientas para desarrolladores"/>
+</node>
+<node TEXT="nl" ID="ID_620341914">
+<attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="173.99999 pt"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="Vertalingen coderen"/>
 <attribute NAME="addons.${name}" VALUE="Ontwikkeltools"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Add-on opbouwen"/>
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on package genereren"/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on documentatie genereren"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
 <attribute NAME="addons.${name}.insertBinary" VALUE="Binary invoegen"/>
-<attribute NAME="addons.${name}.encodeTranslations" VALUE="Vertalingen coderen"/>
 </node>
 </node>
 <node TEXT="deinstall" POSITION="left" ID="ID_26194671"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -738,9 +791,6 @@
 </richcontent>
 <attribute_layout NAME_WIDTH="38.25 pt" VALUE_WIDTH="350.99999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
-<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools.png"/>
-<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-icon.png"/>
-<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-screenshot-1.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/addOnDoc.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/checkAddOn.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/encodeTranslations.groovy"/>
@@ -749,6 +799,11 @@
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/menuItemInfo.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/releaseAddOn.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/scripts/freeplane.dsld"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/exportTranslations.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/importTranslations.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools.png"/>
+<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-icon.png"/>
+<attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-screenshot-1.png"/>
 </node>
 <node TEXT="zips" POSITION="right" ID="ID_482322757"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -786,6 +841,7 @@
   </body>
 </html>
 </richcontent>
+<node TEXT="scripts" ID="ID_929040161"/>
 </node>
 <node TEXT="lib" POSITION="right" ID="ID_492204493"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -875,8 +931,8 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="Build add-on" ID="ID_1576775209" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
-<node TEXT="Package add-on for publication" ID="ID_51819611" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
+<node TEXT="Build add-on" ID="ID_1113925331" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
+<node TEXT="Package add-on for publication" ID="ID_980118363" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 </node>
 </node>
 </map>

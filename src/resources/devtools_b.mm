@@ -1,6 +1,7 @@
 <map version="freeplane 1.9.8">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
-<node TEXT="Devtools+" FOLDED="false" ID="ID_1723255651" CREATED="1642427272507" MODIFIED="1642427273511" LINK="http://www.itworks.hu/freeplanegtd-release/" BACKGROUND_COLOR="#97c7dc">
+<attribute_registry SHOW_ATTRIBUTES="hide"/>
+<node TEXT="Devtools+" FOLDED="false" ID="ID_1723255651" LINK="http://www.itworks.hu/freeplanegtd-release/" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <attribute_layout NAME_WIDTH="129.75 pt" VALUE_WIDTH="134.25 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
@@ -48,10 +49,11 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <edge COLOR="#999999"/>
 <hook NAME="MapStyle">
-    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" fit_to_viewport="false;" show_icon_for_attributes="true" show_note_icons="true" save_folding="default" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
+    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" fit_to_viewport="false;" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="default"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -117,7 +119,7 @@
 </map_styles>
 </hook>
 <hook NAME="AutomaticEdgeColor" COUNTER="0" RULE="ON_BRANCH_CREATION"/>
-<node TEXT="description" POSITION="left" ID="ID_1125389651" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="description" POSITION="left" ID="ID_1125389651">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -136,11 +138,11 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="Devtools with property file support" ID="ID_833172562" CREATED="1642427272509" MODIFIED="1642427272509" BACKGROUND_COLOR="#ffff99">
+<node TEXT="Devtools with property file support" ID="ID_833172562" BACKGROUND_COLOR="#ffff99">
 <edge COLOR="#999999"/>
 </node>
 </node>
-<node TEXT="changes" POSITION="left" ID="ID_1824187995" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="changes" POSITION="left" ID="ID_1824187995">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -154,7 +156,7 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="license" FOLDED="true" POSITION="left" ID="ID_1073906233" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="license" FOLDED="true" POSITION="left" ID="ID_1073906233">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -173,11 +175,11 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 3 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1763974336" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 3 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1763974336">
 <edge COLOR="#999999"/>
 </node>
 </node>
-<node TEXT="preferences.xml" FOLDED="true" POSITION="left" ID="ID_456089147" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="preferences.xml" FOLDED="true" POSITION="left" ID="ID_456089147">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -193,9 +195,9 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1035150433" CREATED="1642427272509" MODIFIED="1642427272509"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1035150433"/>
 </node>
-<node TEXT="default.properties" POSITION="left" ID="ID_680880217" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="default.properties" POSITION="left" ID="ID_680880217">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -218,7 +220,7 @@
 </html></richcontent>
 <attribute_layout NAME_WIDTH="151.5 pt" VALUE_WIDTH="72.75 pt"/>
 </node>
-<node TEXT="translations" POSITION="left" ID="ID_580707814" CREATED="1642427272509" MODIFIED="1642427272509"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="translations" POSITION="left" ID="ID_580707814"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -240,7 +242,7 @@
     </ul>
   </body>
 </html></richcontent>
-<node TEXT="en" ID="ID_1367019088" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="en" ID="ID_1367019088">
 <attribute_layout NAME_WIDTH="145.5 pt" VALUE_WIDTH="145.5 pt"/>
 <attribute NAME="addons.${name}" VALUE="Devtools+"/>
 <attribute NAME="addon.${name}.checkAddOn" VALUE="Check addon"/>
@@ -252,7 +254,7 @@
 <attribute NAME="addon.${name}.releaseAddOn" VALUE="Release addon"/>
 </node>
 </node>
-<node TEXT="deinstall" POSITION="left" ID="ID_1357879524" CREATED="1642427272509" MODIFIED="1642427272509">
+<node TEXT="deinstall" POSITION="left" ID="ID_1357879524">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -282,7 +284,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-icon.png"/>
 </node>
-<node TEXT="scripts" POSITION="right" ID="ID_111817827" CREATED="1642427272510" MODIFIED="1642427272510">
+<node TEXT="scripts" POSITION="right" ID="ID_111817827">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -400,7 +402,7 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="insertBinary.groovy" ID="ID_233196701" CREATED="1642427272510" MODIFIED="1642427272510">
+<node TEXT="insertBinary.groovy" ID="ID_233196701">
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.insertBinary"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
@@ -411,7 +413,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="menuItemInfo.groovy" ID="ID_908294148" CREATED="1642427272510" MODIFIED="1642427272510">
+<node TEXT="menuItemInfo.groovy" ID="ID_908294148">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.menuItemInfo"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
@@ -423,7 +425,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="addOnDoc.groovy" ID="ID_1916801578" CREATED="1642427272510" MODIFIED="1642427272510">
+<node TEXT="addOnDoc.groovy" ID="ID_1916801578">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.addOnDoc"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
@@ -435,7 +437,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="checkAddOn.groovy" ID="ID_1114735" CREATED="1642427272510" MODIFIED="1642427272510">
+<node TEXT="checkAddOn.groovy" ID="ID_1114735">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.checkAddOn"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
@@ -447,7 +449,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="extractBinary.groovy" ID="ID_922500728" CREATED="1642427272511" MODIFIED="1642427272511">
+<node TEXT="extractBinary.groovy" ID="ID_922500728">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.extractBinary"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
@@ -459,7 +461,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="releaseAddOn.groovy" ID="ID_1866141114" CREATED="1642427272511" MODIFIED="1642427272511">
+<node TEXT="releaseAddOn.groovy" ID="ID_1866141114">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.releaseAddOn"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
@@ -472,7 +474,7 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 </node>
-<node TEXT="lib" POSITION="right" ID="ID_1003498816" CREATED="1642427272511" MODIFIED="1642427272511"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="lib" POSITION="right" ID="ID_1003498816"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -508,7 +510,7 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="images" POSITION="right" ID="ID_907142452" CREATED="1642427272511" MODIFIED="1642427272511" LINK="resources/images"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="images" POSITION="right" ID="ID_907142452" LINK="resources/images"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -539,14 +541,14 @@
     </p>
   </body>
 </html></richcontent>
-<node TEXT="${name}.png" ID="ID_1928924406" CREATED="1642427272511" MODIFIED="1642427272511">
+<node TEXT="${name}.png" ID="ID_1928924406">
 <edge COLOR="#999999"/>
 </node>
-<node TEXT="${name}-icon.png" ID="ID_1819207796" CREATED="1642427272511" MODIFIED="1642427272511">
+<node TEXT="${name}-icon.png" ID="ID_1819207796">
 <edge COLOR="#999999"/>
 </node>
 </node>
-<node TEXT="zips" POSITION="right" ID="ID_296980628" CREATED="1642427272511" MODIFIED="1642427272511"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="zips" POSITION="right" ID="ID_296980628"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -581,18 +583,6 @@
     </p>
   </body>
 </html></richcontent>
-</node>
-<node TEXT="actions" POSITION="right" ID="ID_984849663" CREATED="1642427272511" MODIFIED="1642427272511"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    Direct links to menu commands
-  </body>
-</html></richcontent>
-<node TEXT="[addons.devtools.checkAddOn_on_single_node]" ID="ID_130368275" CREATED="1642427272511" MODIFIED="1642427272511" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
-<node TEXT="[addons.devtools.releaseAddOn_on_single_node]" ID="ID_618002094" CREATED="1642427272511" MODIFIED="1642427272511" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 </node>
 </node>
 </map>
