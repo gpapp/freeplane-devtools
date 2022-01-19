@@ -425,7 +425,6 @@ blockquote {
 </node>
 </node>
 <node TEXT="Change Log" ID="ID_309963735">
-<icon BUILTIN="emoji-26D4"/>
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
