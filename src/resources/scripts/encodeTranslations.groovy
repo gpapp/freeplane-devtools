@@ -1,4 +1,4 @@
-// @ExecutionModes({on_single_node="main_menu_scripting/devtools[addons.encodeTranslations]"})
+
 
 def nodeName = 'translations'
 def translationsNode = c.find{ it.plainText.matches(nodeName) }[0]
