@@ -132,7 +132,7 @@ private updateBinaries(Proxy.Node root, String nodeName) {
     return count
 }
 
-// TODO: added by gpapp
+// added by gpapp
 int updateTranslations(Proxy.Node root) {
     int filesAdded = 0
     def nodeName = 'translations'
@@ -173,23 +173,6 @@ int updateTranslations(Proxy.Node root) {
     return filesAdded
 }
 
-// TODO: added by gpapp
-    // It seems it does nothing. It seems currently isn't necesary to escapeUtf8 it
-// void encodeTranslations(Proxy.Node root) {
-    // def nodeName = 'translations'
-    // Proxy.Node translationsNode = root.children.find { it.plainText.matches(nodeName) }
-    // if (!translationsNode) {
-        // errors << "The root node ${root.plainText} has no '$nodeName' child. Please create it or better run 'Check Add-on'"
-        // return
-    // }
-    // translationsNode.children.each { localeNode ->
-        // localeNode.attributes.map.each { k, v ->
-            // if (v) {
-                // localeNode.attributes.set(k, v)
-            // }
-        // }
-    // }
-// }
 
 // for topDir='/a/b/c' creates a zip file whose entries' path will start with 'c/'
 byte[] getZipBytes(File topDir) {
@@ -230,7 +213,6 @@ private byte[] getBytes(MapModel map) {
     Controller.getCurrentModeController().getMapController().getMapWriter()
             .writeMapAsXml(map, out, Mode.FILE, true, false)
     return stringWriter.buffer.toString().getBytes(StandardCharsets.UTF_8)
-//    return stringWriter.buffer.toString().bytes
 }
 
 private boolean saveOrCancel() {
@@ -267,19 +249,12 @@ private createLatestVersionFile(Proxy.Node releaseMapRoot) {
     def file = new File(mapFile.parent, "version.properties")
     def version = releaseMapRoot['version']
     def freeplaneVersionFrom = releaseMapRoot['freeplaneVersionFrom']
-    //ui.informationMessage("downloadUrl ${releaseMapRoot['downloadUrl']}".toString())
     def homepage = toUrl(releaseMapRoot, releaseMapRoot.link.text)
-    // ui.informationMessage("homepage ${homepage}".toString())
     def downloadPage = toUrl(releaseMapRoot, releaseMapRoot['downloadUrl'].toString()) ?: homepage
-    // ui.informationMessage("downloadPage ${downloadPage}".toString())
     def releaseMapFileName = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm").name
-    // ui.informationMessage("releaseMapFileName ${releaseMapFileName}".toString())
     def downloadFile = new File(downloadPage.path, releaseMapFileName)
-    // ui.informationMessage("downloadFile ${downloadFile}".toString())
     def downloadFilePath = downloadFile.path.replace(File.separator, '/')
-    // ui.informationMessage("downloadFilePath ${downloadFilePath}".toString())
     def downloadUrl  = new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath)
-    // ui.informationMessage("downloadUrl ${downloadUrl}".toString())
     file.text = """version=${version}
 downloadUrl=${downloadUrl}
 freeplaneVersionFrom=${freeplaneVersionFrom}
@@ -330,7 +305,6 @@ if (!node.map.root.link.text) {
 if (!node.map.isSaved() && !saveOrCancel())
     return
 def downloadUrl = node.map.root['downloadUrl'] ? expand(node.map.root, node.map.root['downloadUrl'].toString()) : null
-//ui.informationMessage(downloadUrl.toString())
 if (downloadUrl && !isUrl(downloadUrl)){
     ui.errorMessage("downloadUrl is not valid - can't continue.")
     return
@@ -348,8 +322,7 @@ try {
     counts.zips = updateZips(releaseMapRoot)
     counts.images = updateImages(releaseMapRoot)
     counts.lib = updateLib(releaseMapRoot)
-    counts.translations = updateTranslations(releaseMapRoot)     // TODO: added by gpapp
-//    encodeTranslations(releaseMapRoot)                           // TODO: added by gpapp. // edo: it seems it is no longer needed
+    counts.translations = updateTranslations(releaseMapRoot)     // added by gpapp
     createLatestVersionFile(releaseMapRoot)
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
 } catch (Exception e) {
