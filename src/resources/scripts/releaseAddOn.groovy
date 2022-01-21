@@ -1,4 +1,4 @@
-// @ExecutionModes({on_single_node="main_menu_scripting/devtools[addons.releaseAddOn]"})
+
 // Copyright (C) 2011 Volker Boerchers
 //
 // This program is free software: you can redistribute it and/or modify
@@ -11,6 +11,14 @@
 //  - It copies the <addon>.mm to <addon>-<version>.mm
 //  - It updates the script node's context from the files lying around
 ////////////////////////////////////////////////////////////////////////////////
+
+import java.util.regex.Pattern
+import java.util.zip.ZipEntry
+import java.util.zip.ZipOutputStream
+import java.nio.charset.StandardCharsets
+
+import javax.swing.JOptionPane
+
 import org.apache.commons.lang.StringUtils
 import org.apache.commons.lang.WordUtils
 import org.freeplane.core.util.LogUtils
@@ -23,10 +31,6 @@ import org.freeplane.features.url.mindmapmode.MFileManager
 import org.freeplane.plugin.script.proxy.NodeProxy
 import org.freeplane.plugin.script.proxy.Proxy
 
-import javax.swing.*
-import java.util.zip.ZipEntry
-import java.util.zip.ZipOutputStream
-
 // script bindings
 errors = []
 dialogTitle = 'Create release package'
@@ -34,6 +38,7 @@ dialogTitle = 'Create release package'
 def expand(Proxy.Node attributeNode, String string) {
     // expands strings like "${name}.groovy"
     string.replaceAll(/\$\{([^}]+)\}/, { match, key -> def v = attributeNode.attributes.map[key]; v ? v : match })
+          .replaceAll(/\$\{([^}]+)\}/, { match, key -> key == 'homepage' ? attributeNode.link.text?: match : match })
 }
 
 // returns the count of scripts added
@@ -43,6 +48,11 @@ int updateScripts(Proxy.Node root) {
     Proxy.Node scriptsNode = root.children.find { it.plainText == 'scripts' }
     if (!scriptsNode) {
         errors << "The root node ${root.plainText} has no 'scripts' child. Please create it or better run 'Check Add-on'"
+        return 0
+    }
+    Proxy.Node englishTranslationsNode = root.children.find{ it.plainText == 'translations' }?.children?.find{ it.plainText == 'en' }
+    if (!englishTranslationsNode) {
+        errors << "There are no English translations. Please create them or better run 'Check Add-on'"
         return 0
     }
     scriptsNode.children.findAll { it.plainText.matches('.*\\.\\w+') }.each {
@@ -56,6 +66,9 @@ int updateScripts(Proxy.Node root) {
             count++
         }
         it.folded = true
+        def menuTitleKey = it.attributes.getFirst('menuTitleKey')
+        if (!englishTranslationsNode.attributes.getFirst(menuTitleKey))
+            errors << "Missing English translation for '${menuTitleKey}'. 'Check Add-on' may help."
     }
     return count
 }
@@ -95,7 +108,7 @@ int updateLib(Proxy.Node root) {
     return updateBinaries(root, 'lib')
 }
 
-private int updateBinaries(Proxy.Node root, String nodeName) {
+private updateBinaries(Proxy.Node root, String nodeName) {
     int count = 0
     Proxy.Node parentNode = root.children.find { it.plainText.matches(nodeName) }
     if (!parentNode) {
@@ -119,6 +132,7 @@ private int updateBinaries(Proxy.Node root, String nodeName) {
     return count
 }
 
+// added by gpapp
 int updateTranslations(Proxy.Node root) {
     int filesAdded = 0
     def nodeName = 'translations'
@@ -151,6 +165,7 @@ int updateTranslations(Proxy.Node root) {
                     key, value ->
                         langNode[key] = value
                 }
+                langNode.attributes.optimizeWidths()
             }
             ++filesAdded
         }
@@ -158,21 +173,6 @@ int updateTranslations(Proxy.Node root) {
     return filesAdded
 }
 
-void encodeTranslations(Proxy.Node root) {
-    def nodeName = 'translations'
-    Proxy.Node translationsNode = root.children.find { it.plainText.matches(nodeName) }
-    if (!translationsNode) {
-        errors << "The root node ${root.plainText} has no '$nodeName' child. Please create it or better run 'Check Add-on'"
-        return
-    }
-    translationsNode.children.each { localeNode ->
-        localeNode.attributes.map.each { k, v ->
-            if (v) {
-                localeNode.attributes.set(k, v)
-            }
-        }
-    }
-}
 
 // for topDir='/a/b/c' creates a zip file whose entries' path will start with 'c/'
 byte[] getZipBytes(File topDir) {
@@ -200,7 +200,8 @@ byte[] getZipBytes(File topDir) {
     if (filesAdded) {
         zipOutput.close()
         return byteArrayOutputStream.toByteArray()
-    } else {
+    }
+    else {
         errors << "Directory to zip is empty: $topDir"
         return new byte[0]
     }
@@ -211,7 +212,7 @@ private byte[] getBytes(MapModel map) {
     BufferedWriter out = new BufferedWriter(stringWriter)
     Controller.getCurrentModeController().getMapController().getMapWriter()
             .writeMapAsXml(map, out, Mode.FILE, true, false)
-    return stringWriter.buffer.toString().bytes
+    return stringWriter.buffer.toString().getBytes(StandardCharsets.UTF_8)
 }
 
 private boolean saveOrCancel() {
@@ -220,7 +221,7 @@ private boolean saveOrCancel() {
         return false
     }
     def question = "Do you want to save ${node.map.name} first?"
-    final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+    final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)
     if (selection == JOptionPane.YES_OPTION)
         node.map.save(false)
     return (selection != JOptionPane.CANCEL_OPTION)
@@ -249,10 +250,11 @@ private createLatestVersionFile(Proxy.Node releaseMapRoot) {
     def version = releaseMapRoot['version']
     def freeplaneVersionFrom = releaseMapRoot['freeplaneVersionFrom']
     def homepage = toUrl(releaseMapRoot, releaseMapRoot.link.text)
+    def downloadPage = toUrl(releaseMapRoot, releaseMapRoot['downloadUrl'].toString()) ?: homepage
     def releaseMapFileName = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm").name
-    def downloadFile = new File(homepage.path, releaseMapFileName)
+    def downloadFile = new File(downloadPage.path, releaseMapFileName)
     def downloadFilePath = downloadFile.path.replace(File.separator, '/')
-    def downloadUrl = new URL(homepage.protocol, homepage.host, homepage.port, downloadFilePath)
+    def downloadUrl  = new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath)
     file.text = """version=${version}
 downloadUrl=${downloadUrl}
 freeplaneVersionFrom=${freeplaneVersionFrom}
@@ -260,7 +262,19 @@ freeplaneVersionFrom=${freeplaneVersionFrom}
 }
 
 private URL toUrl(Proxy.Node root, String urlString) {
-    return urlString == null ? null : new URL(expand(root, urlString))
+    if (urlString == null)
+        return null
+    def url = expand(root, urlString)
+    return isUrl(url)? new URL(url) : null
+}
+
+private boolean isUrl(String urlString){
+    try{
+        urlString.toURL()
+        return true
+    } catch(e){
+        return false
+    }    
 }
 
 private String shorten(Collection<String> strings, int entrysize) {
@@ -290,6 +304,11 @@ if (!node.map.root.link.text) {
 }
 if (!node.map.isSaved() && !saveOrCancel())
     return
+def downloadUrl = node.map.root['downloadUrl'] ? expand(node.map.root, node.map.root['downloadUrl'].toString()) : null
+if (downloadUrl && !isUrl(downloadUrl)){
+    ui.errorMessage("downloadUrl is not valid - can't continue.")
+    return
+}
 
 def releaseMapFile = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm")
 MapModel releaseMap = createReleaseMap(node)
@@ -303,9 +322,10 @@ try {
     counts.zips = updateZips(releaseMapRoot)
     counts.images = updateImages(releaseMapRoot)
     counts.lib = updateLib(releaseMapRoot)
-    counts.translations = updateTranslations(releaseMapRoot)
-    encodeTranslations(releaseMapRoot)
+    counts.translations = updateTranslations(releaseMapRoot)     // added by gpapp
     createLatestVersionFile(releaseMapRoot)
+    releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
+    releaseMapRoot.children.find{it.plainText == 'actions'}.delete()
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()
@@ -316,7 +336,8 @@ try {
 if (errors) {
     ui.errorMessage("Errors during release (see logfile too): \n" + shortenAndWrap(errors, 200))
     logger.warn("Errors during release: " + shorten(errors, 3000))
-} else {
+}
+else {
     logger.info("Successfully created $releaseMapFile with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip and ${counts.lib} lib file(s)")
     if (isInteractive()) {
         def question = """Successfully created add-on
@@ -327,10 +348,12 @@ with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip
 Also created: 'version.properties' - upload this file to the configured updateUrl!
 
 Open the new add-on map ${releaseMapFile.name}?"""
-        final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
         if (selection == JOptionPane.YES_OPTION) {
             try {
-                c.newMap(releaseMapFile.toURI().toURL())
+ //               c.mapLoader(releaseMapFile.toURI().toURL())
+                ModeController modeController = Controller.getCurrentModeController()
+                modeController.getMapController().openMap(releaseMapFile.toURI().toURL())
             }
             catch (Exception e) {
                 // we'll expect an exception if the user chooses to install instead of opening the map

@@ -1,4 +1,4 @@
-// @ExecutionModes({on_single_node="main_menu_scripting/devtools[addons.checkAddOn]"})
+
 // Copyright (C) 2011 Volker Boerchers
 //
 // This program is free software: you can redistribute it and/or modify
@@ -58,11 +58,17 @@ def createMissingAttributes(Proxy.Node node, List<String> attributes) {
     attributes.each {
         def name = (it instanceof List) ? it[0] : it
         def value = (it instanceof List) ? it[1] : ""
-        if (node.attributes.findFirst(name) == -1) {
+        if (!node.attributes.containsKey(name)) {
             node[name] = value
             addMessage("Created attribute '$name' = '$value' in '${node.plainText}'")
         }
     }
+}
+
+def toPhrase(String texto){
+    def words = texto.split("(?<!^)(?=[A-Z])")
+    words = words.take(1)*.capitalize() + words.drop(1)*.toLowerCase()
+    return words.join(' ')
 }
 
 Proxy.Node findOrCreate(Proxy.Node parent, String name, boolean isLeft) {
@@ -166,8 +172,21 @@ root.note = withBody '''
         too new.
       </li>
       <li>
-        updateUrl: URL of the file containing information (version, download url) on
-        the latest version of this add-on. By default: "${homepage}/version.properties"
+        updateUrl: URL of the file containing information (version, download 
+        url) on the latest version of this add-on. By default: 
+        &quot;${homepage}/version.properties&quot;
+      </li>
+      <li>
+        addonsMenu: Defines the addon's main menu location, defaults menu 
+        'main_menu_scripting'.<br>Use developer tool menuItemInfo to inspect 
+        menu location keys.<br>This attribute is mandatory.<br>Example: 
+        '/menu_bar/myAddons'
+      </li>
+      <li>
+        downloadUrl: URL from the place where the AddOn file will be available 
+        for downloading.<br>By default is the same as the homepage.<br>You can 
+        define a different place or a subfolder of the homepage.<br>Example: 
+        &quot;${homepage}/files/&quot;
       </li>
     </ul>
   </body>
@@ -180,8 +199,12 @@ createMissingAttributes(root, [
     'author',
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
-    'updateUrl'
+    'updateUrl',
+    'downloadUrl',
+    'changelogUrl',
+    ['addonsMenu',	'main_menu_scripting']
 ])
+
 
 //
 // ============ description ============
@@ -256,8 +279,16 @@ findOrCreate(root, 'preferences.xml', LEFT).note = withBody '''
 //
 findOrCreate(root, 'default.properties', LEFT).note = withBody '''
     <p>
-      These properties play together with the preferences: Each property defined in the preferences should have a default value in the attributes of this node.
+      These properties are used for:
     </p>
+    <ul>
+      <li>
+        Each property defined in the preferences should have a default value in the attributes of this node.
+      </li>
+      <li>
+        For each menu item with an icon add an attribute with the icon key (use developer tool menuItemInfo) as key and the icon path as value. Example: '${name}.icon': '/images/${name}-icon.png'
+      </li>
+    </ul>
 '''
 
 //
@@ -280,10 +311,11 @@ translationsNode.note = withBody '''
       </li>
     </ul>
 '''
-if (translationsNode.isLeaf()) {
-    def en = translationsNode.createChild('en')
-    en['addons.${name}'] = addOnName
-}
+def englishTranslationsNode = findOrCreate(translationsNode, 'en', LEFT)
+createMissingAttributes(englishTranslationsNode, [
+    [ 'addons.${name}', addOnName ]
+])
+// englishTranslationsNode will be accessed later for script name translations
 
 //
 // ============ uninstall ============
@@ -304,7 +336,7 @@ if (uninstallNode.attributes.size() == 0) {
 def scriptsNode = findOrCreate(root, 'scripts', RIGHT)
 scriptsNode.note = withBody '''
     <p>
-      An add-on may contain multiple scripts. The node text defines the script name (e.g. inserInlineImage.groovy). The name must have a suffix of a supported script language like .groovy or .js and may only consist of letters and digits. The script properties have to be configured via attributes:
+      An add-on may contain multiple scripts. The node text defines the script name (e.g. insertInlineImage.groovy). The name must have a suffix of a supported script language like .groovy or .js and may only consist of letters and digits. The script properties have to be configured via attributes:
     </p>
     <p>
     </p>
@@ -312,13 +344,10 @@ scriptsNode.note = withBody '''
       * menuLocation: &lt;locationkey&gt;
     </p>
     <p>
-      &#160;&#160;&#160;- Defines where the menu location.
+      &#160;&#160;&#160;- Defines the menu location, defaults a sub menu 'main_menu_scripting/addons.${name}'.
     </p>
     <p>
-      &#160;&#160;&#160;-&#160;See mindmapmodemenu.xml for how the menu locations look like.
-    </p>
-    <p>
-      &#160;&#160;&#160;- http://freeplane.bzr.sf.net/bzr/freeplane/freeplane_program/trunk/annotate/head%3A/freeplane/resources/xml/mindmapmodemenu.xml
+      &#160;&#160;&#160;-&#160;Use developer tool menuItemInfo to inspect menu location keys.
     </p>
     <p>
       &#160;&#160;&#160;- This attribute is mandatory
@@ -411,10 +440,20 @@ scriptsNode.note = withBody '''
     </p>
 '''
 if (node.map.file != null) {
-    def filesToExclude = ['.classpath', '.project', 'freeplane.dsld']
-    def scriptsDir = new File(node.map.file.parent, 'scripts')
-    if (scriptsDir.exists()) {
-        scriptsDir.eachFile(FileType.FILES) { file ->
+    def filesToExclude = ['.classpath', '.project', 'freeplane.dsld', 'freeplane.gdsl']
+    def scriptsDirs = []
+    scriptsDirs << new File(node.map.file.parent, 'scripts')
+    // includes scripts locations in case of Gradle plugin
+	try {
+	    if (node.map.file.parentFile.parentFile.name == 'src') {
+	        scriptsDirs << new File(node.map.file.parentFile.parent, 'scripts')
+	    }
+	} catch (Exception e) {
+		logger.warn('Why do you store your add-on definition mind map in a root directory?\n', e)
+	}
+    scriptsDirs.each {
+        if (it.exists()) {
+            it.eachFileRecurse(FileType.FILES) { file ->
             def fileName = file.name
             if (filesToExclude.indexOf(fileName) == -1
                 && scriptsNode.children.find { it.text.contains(fileName) } == null)
@@ -423,6 +462,7 @@ if (node.map.file != null) {
 			}
         }
     }
+}
 }
 
 def scriptsNodesWithErrors = scriptsNode.children.findAll{ !it.plainText.matches('^\\w+\\.\\w+') }*.plainText
@@ -437,10 +477,11 @@ if (scriptsNodesWithUnknownSuffixes) {
 
 scriptsNode.children.each {
     def scriptBaseName = it.plainText.replaceFirst('\\.\\w+$', '')
-    def menuTitleKey = "addon.\${name}.${scriptBaseName}"
+    def existingMenuTitleKey = it.attributes.getFirst('menuTitleKey')
+    def menuTitleKey = existingMenuTitleKey ?: "addons.\${name}.${scriptBaseName}"
     createMissingAttributes(it, [
         [ 'menuTitleKey', menuTitleKey ]
-        , ['menuLocation', 'main_menu_scripting']
+        , ['menuLocation', '\${addonsMenu}/addons.\${name}']
         , ['executionMode', 'on_single_node']
         , 'keyboardShortcut'
         , ['execute_scripts_without_asking', 'true']
@@ -449,6 +490,7 @@ scriptsNode.children.each {
         , ['execute_scripts_without_exec_restriction', 'false']
         , ['execute_scripts_without_network_restriction', 'false']
     ])
+    createMissingAttributes(englishTranslationsNode, [ [menuTitleKey, toPhrase(scriptBaseName)] ] )
 }
 
 filesToUninstall.addAll(scriptsNode.children.collect { "addons/\${name}/scripts/${it.plainText}" })
@@ -586,6 +628,22 @@ filesToUninstall.addAll(
         "resources/images/${image}"
     }
 )
+
+//
+// ============ actions ============
+//
+def actionsNode = findOrCreate(root, 'actions', RIGHT)
+actionsNode.note = withBody '''
+ Direct links to menu commands
+'''
+def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn','addons.devtools.exportTranslations','addons.devtools.importTranslations']
+actions.each{ acc ->
+    def labelText = textUtils.getText(acc)
+    if (!actionsNode.children.any{it.text == labelText}) {        
+        def n = actionsNode.createChild(labelText)
+        n.link.text = "menuitem:_${acc}_on_single_node"
+    }
+}
 
 //
 // ============ uninstallation rules ============
