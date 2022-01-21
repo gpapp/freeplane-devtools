@@ -14,6 +14,9 @@ if (!parentNode) {
 }
 
 def dir = new File(root.map.file.parent, nodeName)
+if (!dir.isDirectory()){
+    dir.mkdir()
+}
 if (dir.isDirectory()) {
     parentNode.children.each{ n ->
         def fileName = "${n.plainText}.properties".toString()
