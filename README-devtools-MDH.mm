@@ -11,7 +11,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-30.75 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-29.25 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -390,8 +390,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.textBlock(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="download" ID="ID_1900518132"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -402,8 +401,7 @@ blockquote {
       The instalable file (```$1-$2.addon.mm```) of the latest version of the this fork can be downloaded from $3.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="devtools" ID="ID_954321371"/>
 <node TEXT="using formula in note of this node to get vX.X.X from list in &apos;change log&apos; node" ID="ID_1280078698" LINK="#ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="plain/">
     <text>=node.link?.node?.children?.first()?.text?:&apos;vX.X.X&apos;</text>
@@ -419,8 +417,7 @@ blockquote {
       = edofro.MarkDownHelper.MDH.webLink(node)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="here" ID="ID_328387021" LINK="https://github.com/EdoFro/freeplane-devtools/releases/latest/"/>
 </node>
 </node>
@@ -568,11 +565,16 @@ blockquote {
   </body>
 </html></richcontent>
 <node TEXT="When building a new add-on, now it adds a new &quot;**action**&quot; node." ID="ID_44269758"/>
-<node TEXT="This node has two children nodes with links to the &quot;**Build add-on**&quot; and &quot;**Package add-on for publication**&quot; menu commands." ID="ID_1695842943"/>
-<node TEXT="This node is just to facilitate the access to these commands." ID="ID_677846402"/>
+<node TEXT="This node has children nodes with links to following menu commands:" ID="ID_1695842943">
+<node TEXT="**Build add-on**" ID="ID_552607406"/>
+<node TEXT="**Package add-on for publication**" ID="ID_1347649648"/>
+<node TEXT="**Export Translations**" ID="ID_347270789"/>
+<node TEXT="**Import Translations**" ID="ID_439625197"/>
+</node>
+<node TEXT="This node is just to facilitate the access to these commands" ID="ID_677846402"/>
 </node>
 </node>
-<node TEXT="new features" ID="ID_992339106">
+<node TEXT="new commands" ID="ID_992339106">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1977967499"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -585,10 +587,7 @@ blockquote {
   </body>
 </html></richcontent>
 <node TEXT="**Export Translation**" ID="ID_167125793">
-<node TEXT="Exports translations as properties files to &apos;translations&apos; folder" ID="ID_1342955431">
-<node TEXT="Only if a &apos;translations&apos; folder exists" ID="ID_673156701"/>
-<node TEXT="You have to create a &apos;translations&apos; folder in your projects folder, if you want to use this feature." ID="ID_358160968"/>
-</node>
+<node TEXT="Exports translations as properties files to &apos;translations&apos; folder" ID="ID_1342955431"/>
 <node TEXT="This way you can work on the localization with other special tools" ID="ID_1552626298">
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_1998828916"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -636,6 +635,28 @@ blockquote {
 <node TEXT="This way you can update the add-on with the localization files" ID="ID_1613832037"/>
 <node TEXT="This feature is also automatically applied when packaging the add-on.&#xa;Added by GPAPP" ID="ID_133914881"/>
 </node>
+<node TEXT="**Inspect installed Add-On**" ID="ID_335090914">
+<node TEXT="Inserts a node with the properties information of the installed add-on you select" ID="ID_1303739816"/>
+<node TEXT="A dialog appears where you can select from a list with all the installed add-ons" ID="ID_1546556617"/>
+</node>
+</node>
+</node>
+<node TEXT="other changes" ID="ID_1056104045">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_473078812"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1343062747">
+<node TEXT="It transform a camelCase file name into a normal phrase" ID="ID_240366936"/>
+</node>
+<node TEXT="&quot;**Package add-on for publication**&quot; can now open the new add-on for directly installation" ID="ID_250352766"/>
 </node>
 </node>
 </node>
@@ -652,6 +673,14 @@ blockquote {
     </p>
   </body>
 </html></richcontent>
+<node TEXT="v0.9.29" ID="ID_1414945820">
+<node TEXT="Added inspectInstalledAddOn" ID="ID_1828357472"/>
+<node TEXT="Added &quot;Export Translations&quot; and &quot;Import Translations&quot; to &quot;actions&quot; node" ID="ID_1249621287"/>
+<node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1682924207"/>
+<node TEXT="It deletes the &apos;actions&apos; node in the add-on package" ID="ID_1692682693"/>
+<node TEXT="&quot;Export Translations&quot; creates &apos;translations&apos; folder if it doesn&apos;t exist" ID="ID_1152663184"/>
+<node TEXT="releaseAddOn now can install the add-on directly" ID="ID_536532065"/>
+</node>
 <node TEXT="v0.9.28" FOLDED="true" ID="ID_1070972671">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="Merged with GPAPP devtools version" ID="ID_81663064"/>
@@ -771,6 +800,37 @@ blockquote {
 </node>
 </node>
 </node>
+</node>
+</node>
+<node TEXT="temp scripts" POSITION="right" ID="ID_421122053">
+<node TEXT="bold nodes" ID="ID_635130219"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      c.selecteds.each{n -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.text = &quot;**${n.plainText}**&quot;
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html></richcontent>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 <node TEXT="**IMPORTANT**:  &#xa;This map needs that the **MarkdownHelper** add-on is installed to work properly." LOCALIZED_STYLE_REF="styles.important" POSITION="left" ID="ID_1035125343" ICON_SIZE="96 pt" BACKGROUND_COLOR="#ffff00" STYLE="rectangle" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="10 pt" FORMAT="markdownPatternFormat" BORDER_WIDTH="3 px" MAX_WIDTH="13 cm">
