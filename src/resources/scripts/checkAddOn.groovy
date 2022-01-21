@@ -630,7 +630,7 @@ def actionsNode = findOrCreate(root, 'actions', RIGHT)
 actionsNode.note = withBody '''
  Direct links to menu commands
 '''
-def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn']
+def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn','addons.devtools.exportTranslations','addons.devtools.importTranslations']
 actions.each{ acc ->
     def labelText = textUtils.getText(acc)
     if (!actionsNode.children.any{it.text == labelText}) {        
