@@ -65,6 +65,12 @@ def createMissingAttributes(Proxy.Node node, List<String> attributes) {
     }
 }
 
+def toPhrase(String texto){
+    def words = texto.split("(?<!^)(?=[A-Z])")
+    words = words.take(1)*.capitalize() + words.drop(1)*.toLowerCase()
+    return words.join(' ')
+}
+
 Proxy.Node findOrCreate(Proxy.Node parent, String name, boolean isLeft) {
     def node = parent.children.find{ it.plainText == name }
     if (node == null) {
@@ -484,7 +490,7 @@ scriptsNode.children.each {
         , ['execute_scripts_without_exec_restriction', 'false']
         , ['execute_scripts_without_network_restriction', 'false']
     ])
-    createMissingAttributes(englishTranslationsNode, [menuTitleKey])
+    createMissingAttributes(englishTranslationsNode, [ [menuTitleKey, toPhrase(scriptBaseName)] ] )
 }
 
 filesToUninstall.addAll(scriptsNode.children.collect { "addons/\${name}/scripts/${it.plainText}" })
@@ -630,7 +636,7 @@ def actionsNode = findOrCreate(root, 'actions', RIGHT)
 actionsNode.note = withBody '''
  Direct links to menu commands
 '''
-def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn']
+def actions = ['addons.devtools.checkAddOn','addons.devtools.releaseAddOn','addons.devtools.exportTranslations','addons.devtools.importTranslations']
 actions.each{ acc ->
     def labelText = textUtils.getText(acc)
     if (!actionsNode.children.any{it.text == labelText}) {        

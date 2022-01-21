@@ -325,6 +325,7 @@ try {
     counts.translations = updateTranslations(releaseMapRoot)     // added by gpapp
     createLatestVersionFile(releaseMapRoot)
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
+    releaseMapRoot.children.find{it.plainText == 'actions'}.delete()
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()
@@ -350,7 +351,9 @@ Open the new add-on map ${releaseMapFile.name}?"""
         final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
         if (selection == JOptionPane.YES_OPTION) {
             try {
-                c.newMap(releaseMapFile.toURI().toURL())
+ //               c.mapLoader(releaseMapFile.toURI().toURL())
+                ModeController modeController = Controller.getCurrentModeController()
+                modeController.getMapController().openMap(releaseMapFile.toURI().toURL())
             }
             catch (Exception e) {
                 // we'll expect an exception if the user chooses to install instead of opening the map

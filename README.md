@@ -13,7 +13,7 @@ And its official websites are:
 
 In this fork I united the last version from [HaaiHenkie](https://sourceforge.net/u/haaihenkie/profile/) ([v.0.9.27](https://github.com/HaaiHenkie/addons/tree/fix-bug-2847), look this [thread](https://sourceforge.net/p/freeplane/bugs/2847/)) with the [version](https://github.com/gpapp/freeplane-devtools) from [gpapp](https://sourceforge.net/u/gergelypapp/profile/) .
 
-The instalable file (```devtools-v0.9.28.addon.mm```) of the latest version of the this fork can be downloaded from [here](https://github.com/EdoFro/freeplane-devtools/releases/latest/).
+The instalable file (```devtools-v0.9.29.addon.mm```) of the latest version of the this fork can be downloaded from [here](https://github.com/EdoFro/freeplane-devtools/releases/latest/).
 
 bye,
 
@@ -94,15 +94,17 @@ The functions are available under Tools -> Development Tools
 #### 2.3.2. "actions" node
 
 * When building a new add-on, now it adds a new "**action**" node.
-* This node has two children nodes with links to the "**Build add-on**" and "**Package add-on for publication**" menu commands.
-* This node is just to facilitate the access to these commands.
+* This node has children nodes with links to following menu commands:
+   * **Build add-on**
+   * **Package add-on for publication**
+   * **Export Translations**
+   * **Import Translations**
+* This node is just to facilitate the access to these commands
 
-#### 2.3.3. new features
+#### 2.3.3. new commands
 
 * **Export Translation**
    * Exports translations as properties files to 'translations' folder
-      * Only if a 'translations' folder exists
-      * You have to create a 'translations' folder in your projects folder, if you want to use this feature.
    * This way you can work on the localization with other special tools
       * I'm using [IniTranslator](https://sourceforge.net/projects/initranslator/) to edit these ```*.properties ``` files, but, as far as I know, there are plenty of different tools to do this.
 * **Import Translation**
@@ -110,9 +112,25 @@ The functions are available under Tools -> Development Tools
       * Only if a 'translations' folder exists
    * This way you can update the add-on with the localization files
    * This feature is also automatically applied when packaging the add-on.<br>Added by GPAPP
+* **Inspect installed Add-On**
+   * Inserts a node with the properties information of the installed add-on you select
+   * A dialog appears where you can select from a list with all the installed add-ons
+
+#### 2.3.4. other changes
+
+* Now it proposes a menu text for the new scripts based on its file name
+   * It transform a camelCase file name into a normal phrase
+* "**Package add-on for publication**" can now open the new add-on for directly installation
 
 ## 3. Change Log
 
+* v0.9.29
+   * Added inspectInstalledAddOn
+   * Added "Export Translations" and "Import Translations" to "actions" node
+   * Now it proposes a menu text for the new scripts based on its file name
+   * It deletes the 'actions' node in the add-on package
+   * "Export Translations" creates 'translations' folder if it doesn't exist
+   * releaseAddOn now can install the add-on directly
 * v0.9.28
    * Merged with GPAPP devtools version
    * Added improved downloadUrl
