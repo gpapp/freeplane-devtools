@@ -1,11 +1,10 @@
-<map version="freeplane 1.9.8">
+<map version="freeplane 1.9.13">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
-<attribute_registry SHOW_ATTRIBUTES="hide"/>
-<node TEXT="devtools" FOLDED="false" ID="ID_1723255651" CREATED="1642769742437" MODIFIED="1642770982837" LINK="https://github.com/EdoFro/freeplane-devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
+<node TEXT="devtools" FOLDED="false" ID="ID_1723255651" LINK="https://github.com/EdoFro/freeplane-devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="179.99999 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
-<attribute NAME="version" VALUE="v0.9.29"/>
+<attribute NAME="version" VALUE="v0.9.30"/>
 <attribute NAME="author" VALUE="Volker Börchers, Henk van den Akker, Gergely Papp, Edo Frohlich"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.8.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -52,10 +51,9 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
-<hook NAME="MapStyle" zoom="0.909">
-    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="default"/>
+</html></richcontent>
+<hook NAME="MapStyle">
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="default" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_826352276" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -121,7 +119,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="description" POSITION="left" ID="ID_328053546" CREATED="1642769742439" MODIFIED="1642770982847" VGAP_QUANTITY="2 pt"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="description" POSITION="left" ID="ID_328053546" VGAP_QUANTITY="2 pt"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -137,10 +135,9 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node ID="ID_1187826020" CREATED="1642769742439" MODIFIED="1642770941997" BACKGROUND_COLOR="#ffff75" VSHIFT_QUANTITY="2.25 pt"><richcontent TYPE="NODE">
+<node ID="ID_1187826020" BACKGROUND_COLOR="#ffff75" VSHIFT_QUANTITY="2.25 pt"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -190,7 +187,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font SIZE="16"/>
 <attribute_layout VALUE_WIDTH="100 pt"/>
@@ -209,7 +205,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="scripts" POSITION="right" ID="ID_788417856" CREATED="1642769742439" MODIFIED="1642770982880"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="scripts" FOLDED="true" POSITION="right" ID="ID_788417856"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -324,9 +320,8 @@
       &nbsp;&nbsp;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html>
-</richcontent>
-<node TEXT="checkAddOn.groovy" ID="ID_1651569668" CREATED="1642769742440" MODIFIED="1642769742440"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+</html></richcontent>
+<node TEXT="checkAddOn.groovy" ID="ID_1651569668"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -366,7 +361,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="releaseAddOn.groovy" ID="ID_1385129437" CREATED="1642769742440" MODIFIED="1642769742440"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="releaseAddOn.groovy" ID="ID_1385129437"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -403,7 +398,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="true"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="true"/>
 </node>
-<node TEXT="addOnDoc.groovy" ID="ID_263539694" CREATED="1642769742440" MODIFIED="1642769742440">
+<node TEXT="addOnDoc.groovy" ID="ID_263539694">
 <attribute_layout NAME_WIDTH="200.99999 pt" VALUE_WIDTH="200.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.addOnDoc"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -432,7 +427,7 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="menuItemInfo.groovy" ID="ID_1073334594" CREATED="1642769742440" MODIFIED="1642769742440"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="menuItemInfo.groovy" ID="ID_1073334594"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -454,7 +449,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="insertBinary.groovy" ID="ID_1004069036" CREATED="1642769742440" MODIFIED="1642769742440"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="insertBinary.groovy" ID="ID_1004069036"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -476,7 +471,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="extractBinary.groovy" ID="ID_1968141643" CREATED="1642769742440" MODIFIED="1642769742440">
+<node TEXT="extractBinary.groovy" ID="ID_1968141643">
 <attribute_layout NAME_WIDTH="200.99999 pt" VALUE_WIDTH="200.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.extractBinary"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -505,7 +500,7 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="encodeTranslations.groovy" ID="ID_699413298" CREATED="1642769742441" MODIFIED="1642769742441">
+<node TEXT="encodeTranslations.groovy" ID="ID_699413298">
 <attribute_layout NAME_WIDTH="209.24999 pt" VALUE_WIDTH="192.74999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.encodeTranslations"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -534,7 +529,7 @@
   </body>
 </html></richcontent>
 </node>
-<node TEXT="exportTranslations.groovy" ID="ID_198520850" CREATED="1642769742441" MODIFIED="1642770449586">
+<node TEXT="exportTranslations.groovy" ID="ID_198520850">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.exportTranslations"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -567,10 +562,9 @@
       I'm using IniTranslator to edit these *.properties files, but, as far as I know, there are plenty of different tools to do this.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node TEXT="importTranslations.groovy" ID="ID_1737295547" CREATED="1642769742441" MODIFIED="1642770495351">
+<node TEXT="importTranslations.groovy" ID="ID_1737295547">
 <attribute_layout NAME_WIDTH="202.49999 pt" VALUE_WIDTH="202.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.importTranslations"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -609,10 +603,9 @@
       Added by GPAPP
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node TEXT="inspectInstalledAddOn.groovy" ID="ID_1089662753" CREATED="1642769742441" MODIFIED="1642770513618">
+<node TEXT="inspectInstalledAddOn.groovy" ID="ID_1089662753">
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.inspectInstalledAddOn"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
@@ -638,11 +631,10 @@
       A dialog appears where you can select from a list with all the installed add-ons
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node TEXT="changes" POSITION="left" ID="ID_309963735" CREATED="1642769742441" MODIFIED="1642770982851"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="changes" POSITION="left" ID="ID_309963735"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -652,135 +644,137 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html>
-</richcontent>
-<node TEXT="v0.9" FOLDED="true" ID="ID_781192802" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Initial version" ID="ID_1996473369" CREATED="1642769742441" MODIFIED="1642769742441"/>
+</html></richcontent>
+<node TEXT="v0.9" FOLDED="true" ID="ID_781192802">
+<node TEXT="Initial version" ID="ID_1996473369"/>
 </node>
-<node TEXT="v0.9.4" FOLDED="true" ID="ID_1191427697" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Adjusted to new add-on format" ID="ID_1401343116" CREATED="1642769742441" MODIFIED="1642769742441"/>
-<node TEXT="checkAddon.groovy: add script attributes and deinstallation rules; check case of add-on name" ID="ID_609744697" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.4" FOLDED="true" ID="ID_1191427697">
+<node TEXT="Adjusted to new add-on format" ID="ID_1401343116"/>
+<node TEXT="checkAddon.groovy: add script attributes and deinstallation rules; check case of add-on name" ID="ID_609744697"/>
 </node>
-<node TEXT="v0.9.5" FOLDED="true" ID="ID_1275139979" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Make checkAddOn.groovy work for maps that are not saved" ID="ID_1259871081" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.5" FOLDED="true" ID="ID_1275139979">
+<node TEXT="Make checkAddOn.groovy work for maps that are not saved" ID="ID_1259871081"/>
 </node>
-<node TEXT="v0.9.6" FOLDED="true" ID="ID_1469699162" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Add missing file/write permission for insertBinary.groovy" ID="ID_1936917850" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.6" FOLDED="true" ID="ID_1469699162">
+<node TEXT="Add missing file/write permission for insertBinary.groovy" ID="ID_1936917850"/>
 </node>
-<node TEXT="v0.9.7" FOLDED="true" ID="ID_459911057" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Add support for images.&#xa;Include icon and screenshot." ID="ID_1859362741" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.7" FOLDED="true" ID="ID_459911057">
+<node TEXT="Add support for images.&#xa;Include icon and screenshot." ID="ID_1859362741"/>
 </node>
-<node TEXT="v0.9.9" FOLDED="true" ID="ID_365307397" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="Better error messages in case of missing scripts and zips to include.&#xa;Only look for scripts below the scripts node." ID="ID_1413959921" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.9" FOLDED="true" ID="ID_365307397">
+<node TEXT="Better error messages in case of missing scripts and zips to include.&#xa;Only look for scripts below the scripts node." ID="ID_1413959921"/>
 </node>
-<node TEXT="v0.9.10" FOLDED="true" ID="ID_448176076" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="New: addOnDoc.groovy" ID="ID_257904891" CREATED="1642769742441" MODIFIED="1642769742441"/>
-<node TEXT="releaseAddOn.groovy:&#xa;Creates the release map as model-only to cope with the map open hook that asks if the map should be installed.&#xa;The map is actually saved at the end." ID="ID_19963680" CREATED="1642769742441" MODIFIED="1642769742441"/>
-<node TEXT="new Icons from Predrag Cuklin" ID="ID_1737053784" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.10" FOLDED="true" ID="ID_448176076">
+<node TEXT="New: addOnDoc.groovy" ID="ID_257904891"/>
+<node TEXT="releaseAddOn.groovy:&#xa;Creates the release map as model-only to cope with the map open hook that asks if the map should be installed.&#xa;The map is actually saved at the end." ID="ID_19963680"/>
+<node TEXT="new Icons from Predrag Cuklin" ID="ID_1737053784"/>
 </node>
-<node TEXT="v0.9.11" FOLDED="true" ID="ID_373658102" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="New: menuItemInfo.groovy" ID="ID_602327673" CREATED="1642769742441" MODIFIED="1642769742441"/>
-<node TEXT="fixes for 1.2.12" ID="ID_300339965" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.11" FOLDED="true" ID="ID_373658102">
+<node TEXT="New: menuItemInfo.groovy" ID="ID_602327673"/>
+<node TEXT="fixes for 1.2.12" ID="ID_300339965"/>
 </node>
-<node TEXT="v0.9.12" FOLDED="true" ID="ID_873759803" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="menuItem.groovy: copy string to clipboard" ID="ID_1806951604" CREATED="1642769742441" MODIFIED="1642769742441"/>
+<node TEXT="v0.9.12" FOLDED="true" ID="ID_873759803">
+<node TEXT="menuItem.groovy: copy string to clipboard" ID="ID_1806951604"/>
 </node>
-<node TEXT="v0.9.13" FOLDED="true" ID="ID_350232820" CREATED="1642769742441" MODIFIED="1642769742441">
-<node TEXT="update for new special translation key &apos;addons.${name}.description&apos;" ID="ID_589172556" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="checkAddOn.groovy checks the name of the script too" ID="ID_1103423593" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.13" FOLDED="true" ID="ID_350232820">
+<node TEXT="update for new special translation key &apos;addons.${name}.description&apos;" ID="ID_589172556"/>
+<node TEXT="checkAddOn.groovy checks the name of the script too" ID="ID_1103423593"/>
 </node>
-<node TEXT="v0.9.14" FOLDED="true" ID="ID_1988499160" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.14" FOLDED="true" ID="ID_1988499160">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="update for multiple scripting languages" ID="ID_1961614140" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="support for updateUrl" ID="ID_563212535" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="update for multiple scripting languages" ID="ID_1961614140"/>
+<node TEXT="support for updateUrl" ID="ID_563212535"/>
 </node>
-<node TEXT="v0.9.15" FOLDED="true" ID="ID_1734128243" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="adjusted to new scripts location in Freeplane 1.3.x_beta" ID="ID_1916559200" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="update check and release scripts for installation of libs" ID="ID_1872235344" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="checkAddOn.groovy does a lot more checks and automation than before" ID="ID_661774465" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.15" FOLDED="true" ID="ID_1734128243">
+<node TEXT="adjusted to new scripts location in Freeplane 1.3.x_beta" ID="ID_1916559200"/>
+<node TEXT="update check and release scripts for installation of libs" ID="ID_1872235344"/>
+<node TEXT="checkAddOn.groovy does a lot more checks and automation than before" ID="ID_661774465"/>
 </node>
-<node TEXT="v0.9.16" FOLDED="true" ID="ID_1528553682" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="Fix Package add-on (Mantis #2106):&#xa;- no recursive searches for required nodes&#xa;- avoid out of memory exception on errors" ID="ID_1301970756" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.16" FOLDED="true" ID="ID_1528553682">
+<node TEXT="Fix Package add-on (Mantis #2106):&#xa;- no recursive searches for required nodes&#xa;- avoid out of memory exception on errors" ID="ID_1301970756"/>
 </node>
-<node TEXT="v0.9.17" FOLDED="true" ID="ID_1339360497" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="fix translation encoding" ID="ID_541623240" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.17" FOLDED="true" ID="ID_1339360497">
+<node TEXT="fix translation encoding" ID="ID_541623240"/>
 </node>
-<node TEXT="v0.9.18" FOLDED="true" ID="ID_95478392" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="Fix bug in checkAddOn.groovy that prevented uninstall node from being updated." ID="ID_1125811540" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.18" FOLDED="true" ID="ID_95478392">
+<node TEXT="Fix bug in checkAddOn.groovy that prevented uninstall node from being updated." ID="ID_1125811540"/>
 </node>
-<node TEXT="v0.9.19" FOLDED="true" ID="ID_166560259" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.19" FOLDED="true" ID="ID_166560259">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="added Dutch translation - thanks to Haai Henkie!" ID="ID_214157042" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="checkAddOn.groovy: ignore classpath, .project and freeplane.dsld from scripts/" ID="ID_758381956" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="added Dutch translation - thanks to Haai Henkie!" ID="ID_214157042"/>
+<node TEXT="checkAddOn.groovy: ignore classpath, .project and freeplane.dsld from scripts/" ID="ID_758381956"/>
 </node>
-<node TEXT="v0.9.20" FOLDED="true" ID="ID_1518536148" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.20" FOLDED="true" ID="ID_1518536148">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="fix path to version.properties" ID="ID_1713135491" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="#2234 dealing with spaces in filenames leads releaseAddOn.groovy to crash" ID="ID_1164336874" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="fix path to version.properties" ID="ID_1713135491"/>
+<node TEXT="#2234 dealing with spaces in filenames leads releaseAddOn.groovy to crash" ID="ID_1164336874"/>
 </node>
-<node TEXT="v0.9.21" FOLDED="true" ID="ID_1668855804" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="menuItemInfo: adjusted to Freeplane 1.4 while keeping compatibility to 1.3" ID="ID_1688435093" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="releaseAddOn: avoid problems with paths containing spaces" ID="ID_122150363" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="checkAddOn: add check for the add-on homepage" ID="ID_1883189557" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="encodeTranslations: fix menu location" ID="ID_320983619" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.21" FOLDED="true" ID="ID_1668855804">
+<node TEXT="menuItemInfo: adjusted to Freeplane 1.4 while keeping compatibility to 1.3" ID="ID_1688435093"/>
+<node TEXT="releaseAddOn: avoid problems with paths containing spaces" ID="ID_122150363"/>
+<node TEXT="checkAddOn: add check for the add-on homepage" ID="ID_1883189557"/>
+<node TEXT="encodeTranslations: fix menu location" ID="ID_320983619"/>
 </node>
-<node TEXT="v0.9.22" FOLDED="true" ID="ID_1516811150" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="added extractBinary" ID="ID_1578685543" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="v0.9.22" FOLDED="true" ID="ID_1516811150">
+<node TEXT="added extractBinary" ID="ID_1578685543"/>
 </node>
-<node TEXT="v0.9.23" FOLDED="true" ID="ID_1514294620" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.23" FOLDED="true" ID="ID_1514294620">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="Fix for Freeplane 1.7.x" ID="ID_38718626" CREATED="1642769742442" MODIFIED="1642769742442"/>
+<node TEXT="Fix for Freeplane 1.7.x" ID="ID_38718626"/>
 </node>
-<node TEXT="v0.9.24" FOLDED="true" ID="ID_1948756218" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.24" FOLDED="true" ID="ID_1948756218">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="Fix for #2386 Special characters in add-on translations wrongly displayed" ID="ID_457885988" CREATED="1642769742442" MODIFIED="1642769742442">
-<attribute_layout VALUE_WIDTH="100 pt"/>
-</node>
-<node TEXT="#2642 Devtools creates wrong menuTitleKey for scripts" ID="ID_1374600909" CREATED="1642769742442" MODIFIED="1642769742442"/>
-</node>
-<node TEXT="v0.9.25" FOLDED="true" ID="ID_1823309527" CREATED="1642769742442" MODIFIED="1642769742442">
-<attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="#2643 Devtools does not display its add-on name in menu" ID="ID_1184303114" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="Fix for #2386 Special characters in add-on translations wrongly displayed" ID="ID_457885988">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
-<node TEXT="#2464 test for missing English translations for scripts" ID="ID_1596709901" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="#2642 Devtools creates wrong menuTitleKey for scripts" ID="ID_1374600909"/>
+</node>
+<node TEXT="v0.9.25" FOLDED="true" ID="ID_1823309527">
+<attribute_layout VALUE_WIDTH="100 pt"/>
+<node TEXT="#2643 Devtools does not display its add-on name in menu" ID="ID_1184303114">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
-<node TEXT="Set icon for devtools sub menu" ID="ID_265129237" CREATED="1642769742442" MODIFIED="1642769742442"/>
-</node>
-<node TEXT="v0.9.26" FOLDED="true" ID="ID_497897109" CREATED="1642769742442" MODIFIED="1642769742442">
-<attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="Fix for #2798 : Menu Item Info error" ID="ID_1640195555" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="#2464 test for missing English translations for scripts" ID="ID_1596709901">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
+<node TEXT="Set icon for devtools sub menu" ID="ID_265129237"/>
 </node>
-<node TEXT="v0.9.27" FOLDED="true" ID="ID_910769393" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.26" FOLDED="true" ID="ID_497897109">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="#2847 Devtools&apos; checkAddOn.groovy not compatible with Gradle plugin&apos;s directory structure" ID="ID_843234771" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="Fix for #2798 : Menu Item Info error" ID="ID_1640195555">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 </node>
-<node TEXT="v0.9.28" ID="ID_1070972671" CREATED="1642769742442" MODIFIED="1642769742442">
+<node TEXT="v0.9.27" FOLDED="true" ID="ID_910769393">
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="Merged with GPAPP devtools version" ID="ID_81663064" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="added improved downloadUrl" ID="ID_438023883" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Improved updateUrl" ID="ID_1892062819" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added addonsMenu" ID="ID_1630300171" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added &quot;actions&quot; node with links to Build and Package commands" ID="ID_532968437" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added script &quot;exportTranslation&quot;" ID="ID_1550892273" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added script &quot;importTranslation&quot;" ID="ID_40737250" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added spanish translation" ID="ID_1040264212" CREATED="1642769742442" MODIFIED="1642769742442"/>
-</node>
-<node TEXT="v0.9.29" ID="ID_1414945820" CREATED="1642769742442" MODIFIED="1642769742442">
-<node TEXT="Added inspectInstalledAddOn" ID="ID_1282985371" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Added &quot;Export Translations&quot; and &quot;Import Translations&quot; to &quot;actions&quot; node" ID="ID_1249621287" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1682924207" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="It deletes the &apos;actions&apos; node in the add-on package" ID="ID_1692682693" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="&quot;Export Translations&quot; creates &apos;translations&apos; folder if it doesn&apos;t exist" ID="ID_1152663184" CREATED="1642769742442" MODIFIED="1642769742442"/>
-<node TEXT="releaseAddOn now can install the add-on directly" ID="ID_536532065" CREATED="1642769848308" MODIFIED="1642769915554"/>
+<node TEXT="#2847 Devtools&apos; checkAddOn.groovy not compatible with Gradle plugin&apos;s directory structure" ID="ID_843234771">
+<attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 </node>
-<node TEXT="license" FOLDED="true" POSITION="left" ID="ID_770036552" CREATED="1642769742443" MODIFIED="1642770982854"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="v0.9.28" ID="ID_1070972671">
+<attribute_layout VALUE_WIDTH="100 pt"/>
+<node TEXT="Merged with GPAPP devtools version" ID="ID_81663064"/>
+<node TEXT="added improved downloadUrl" ID="ID_438023883"/>
+<node TEXT="Improved updateUrl" ID="ID_1892062819"/>
+<node TEXT="Added addonsMenu" ID="ID_1630300171"/>
+<node TEXT="Added &quot;actions&quot; node with links to Build and Package commands" ID="ID_532968437"/>
+<node TEXT="Added script &quot;exportTranslation&quot;" ID="ID_1550892273"/>
+<node TEXT="Added script &quot;importTranslation&quot;" ID="ID_40737250"/>
+<node TEXT="Added spanish translation" ID="ID_1040264212"/>
+</node>
+<node TEXT="v0.9.29" ID="ID_1414945820">
+<node TEXT="Added inspectInstalledAddOn" ID="ID_1282985371"/>
+<node TEXT="Added &quot;Export Translations&quot; and &quot;Import Translations&quot; to &quot;actions&quot; node" ID="ID_1249621287"/>
+<node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1682924207"/>
+<node TEXT="It deletes the &apos;actions&apos; node in the add-on package" ID="ID_1692682693"/>
+<node TEXT="&quot;Export Translations&quot; creates &apos;translations&apos; folder if it doesn&apos;t exist" ID="ID_1152663184"/>
+<node TEXT="releaseAddOn now can install the add-on directly" ID="ID_536532065"/>
+</node>
+<node TEXT="v0.9.30" ID="ID_1353343071">
+<node TEXT="bug fixes" ID="ID_455683896"/>
+</node>
+</node>
+<node TEXT="license" FOLDED="true" POSITION="left" ID="ID_770036552"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -796,12 +790,11 @@
       The License text has to be entered as a child of the <i>'license'</i>&nbsp;node, either as plain text or as HTML.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
-<node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 2 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1912443753" CREATED="1642769742443" MODIFIED="1642769742443"/>
+<node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 2 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1912443753"/>
 </node>
-<node TEXT="preferences.xml" POSITION="left" ID="ID_1267015903" CREATED="1642769742443" MODIFIED="1642770982860"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="preferences.xml" POSITION="left" ID="ID_95601904"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -814,13 +807,15 @@
       <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node.</font>
     </p>
   </body>
-</html>
-</richcontent>
-<attribute_layout VALUE_WIDTH="100 pt"/>
+</html></richcontent>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                           &lt;separator name = &quot;devtools&quot;&gt;&#xa;                                    &lt;string name = &quot;devtools_addonsMenu&quot; /&gt;&#xa;                                    &lt;string name = &quot;devtools_updateUrl&quot; /&gt;&#xa;                                    &lt;string name = &quot;devtools_downloadUrl&quot; /&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1295817689"/>
 </node>
-<node TEXT="default.properties" POSITION="left" ID="ID_1363888784" CREATED="1642769742443" MODIFIED="1642770982865">
+<node TEXT="default.properties" POSITION="left" ID="ID_1363888784">
 <attribute_layout NAME_WIDTH="138.75 pt" VALUE_WIDTH="138.75 pt"/>
 <attribute NAME="${name}.icon" VALUE="/images/${name}-icon.png"/>
+<attribute NAME="devtools_addonsMenu" VALUE="main_menu_scripting"/>
+<attribute NAME="devtools_updateUrl" VALUE="S{homepage}/version.properties"/>
+<attribute NAME="devtools_downloadUrl" VALUE="S{homepage}/"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -839,10 +834,9 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node TEXT="translations" POSITION="left" ID="ID_1289155258" CREATED="1642769742443" MODIFIED="1642770982869"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="translations" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -863,62 +857,68 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
-<node TEXT="de" ID="ID_795116528" CREATED="1642769742443" MODIFIED="1642769742443">
-<attribute_layout NAME_WIDTH="184.49999 pt" VALUE_WIDTH="184.49999 pt"/>
-<attribute NAME="addons.${name}.insertBinary" VALUE="Binärdatei einfügen"/>
-<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Add-on Eigenschaften erhalten"/>
-<attribute NAME="addons.${name}.encodeTranslations" VALUE="\u00DCbersetzungen kodieren"/>
-<attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on-Package erzeugen"/>
-<attribute NAME="addons.${name}.extractBinary" VALUE="Knoten in Bin\u00E4rdatei extrahieren"/>
-<attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on-Dokumentation erzeugen"/>
-<attribute NAME="addons.${name}.importTranslations" VALUE="\u00DCbersetzungen importieren"/>
+</html></richcontent>
+<node TEXT="de" ID="ID_1722341139">
+<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="195.74999 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Komplettiere Add-on"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Men\u00FCeintrag-Details"/>
-<attribute NAME="addons.${name}.exportTranslations" VALUE="\u00DCbersetzungen exportieren"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="\u00DCbersetzungen importieren"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="\u00DCbersetzungen kodieren"/>
+<attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on-Package erzeugen"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on-Dokumentation erzeugen"/>
 <attribute NAME="addons.${name}" VALUE="Entwicklungswerkzeuge"/>
+<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Add-on Eigenschaften erhalten"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Knoten in Bin\u00E4rdatei extrahieren"/>
+<attribute NAME="addons.${name}.insertBinary" VALUE="Binärdatei einfügen"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="\u00DCbersetzungen exportieren"/>
 </node>
-<node TEXT="en" ID="ID_877958400" CREATED="1642769742443" MODIFIED="1642769742443">
-<attribute_layout NAME_WIDTH="194.99999 pt" VALUE_WIDTH="194.99999 pt"/>
-<attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
-<attribute NAME="addons.${name}.inspectInstalledAddOn" VALUE="Add-on properties info"/>
+<node TEXT="en" ID="ID_332027216">
+<attribute_layout NAME_WIDTH="198.74999 pt" VALUE_WIDTH="422.99999 pt"/>
+<attribute NAME="OptionPanel.devtools_updateUrl.tooltip" VALUE="URL of the file containing information (version, download url) on the latest version of this add-on. \nBy default: &quot;${homepage}/version.properties&quot;"/>
+<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
+<attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
+<attribute NAME="OptionPanel.devtools_addonsMenu.tooltip" VALUE="Defines the addon&apos;s main menu location in Freeplane&apos;s UI, defaults menu &apos;main_menu_scripting&apos;"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="Import Translations"/>
+<attribute NAME="OptionPanel.devtools_updateUrl" VALUE="Update URL"/>
 <attribute NAME="addons.${name}.encodeTranslations" VALUE="Encode translations"/>
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Package add-on for publication"/>
-<attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
-<attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
-<attribute NAME="addons.${name}.importTranslations" VALUE="Import Translations"/>
-<attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
-<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
-<attribute NAME="addons.${name}.exportTranslations" VALUE="Export Translations"/>
 <attribute NAME="addons.${name}" VALUE="Developer Tools"/>
+<attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
+<attribute NAME="OptionPanel.devtools_downloadUrl" VALUE="Download URL"/>
+<attribute NAME="OptionPanel.devtools_addonsMenu" VALUE="Add-on&apos;s menu "/>
+<attribute NAME="OptionPanel.separator.devtools" VALUE="Developer Tools"/>
+<attribute NAME="OptionPanel.devtools_downloadUrl.tooltip" VALUE="URL from the place where the AddOn file will be available for downloading. \nBy default is the same as the homepage. \nYou can define a different place or a subfolder of the homepage. \nExample: &quot;${homepage}/files/&quot;"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
+<attribute NAME="addons.${name}.inspectInstalledAddOn" VALUE="Add-on properties info"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="Export Translations"/>
 </node>
-<node TEXT="es" ID="ID_1444642303" CREATED="1642769742443" MODIFIED="1642769742443">
-<attribute_layout NAME_WIDTH="184.49999 pt" VALUE_WIDTH="185.99999 pt"/>
-<attribute NAME="addons.${name}.insertBinary" VALUE="Insertar binario"/>
-<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Información de propiedades de add-on"/>
-<attribute NAME="addons.${name}.encodeTranslations" VALUE="Codificar traducciones"/>
-<attribute NAME="addons.${name}.releaseAddOn" VALUE="Empaquetar add-on para su publicación"/>
-<attribute NAME="addons.${name}.extractBinary" VALUE="Extraer binario"/>
-<attribute NAME="addons.${name}.addOnDoc" VALUE="Generar documentación de add-on"/>
-<attribute NAME="addons.${name}.importTranslations" VALUE="Importar traducciones"/>
+<node TEXT="es" ID="ID_298957055">
+<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="195.74999 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Construir add-on"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Información de ítem de menú"/>
-<attribute NAME="addons.${name}.exportTranslations" VALUE="Exportar traducciones"/>
+<attribute NAME="addons.${name}.importTranslations" VALUE="Importar traducciones"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="Codificar traducciones"/>
+<attribute NAME="addons.${name}.releaseAddOn" VALUE="Empaquetar add-on para su publicación"/>
+<attribute NAME="addons.${name}.addOnDoc" VALUE="Generar documentación de add-on"/>
 <attribute NAME="addons.${name}" VALUE="Herramientas para desarrolladores"/>
+<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Información de propiedades de add-on"/>
+<attribute NAME="addons.${name}.extractBinary" VALUE="Extraer binario"/>
+<attribute NAME="addons.${name}.insertBinary" VALUE="Insertar binario"/>
+<attribute NAME="addons.${name}.exportTranslations" VALUE="Exportar traducciones"/>
 </node>
-<node TEXT="nl" ID="ID_1298408245" CREATED="1642769742444" MODIFIED="1642769742444">
-<attribute_layout NAME_WIDTH="173.99999 pt" VALUE_WIDTH="173.99999 pt"/>
-<attribute NAME="addons.${name}.encodeTranslations" VALUE="Vertalingen coderen"/>
-<attribute NAME="addons.${name}" VALUE="Ontwikkeltools"/>
+<node TEXT="nl" ID="ID_1408666602">
+<attribute_layout NAME_WIDTH="178.49999 pt" VALUE_WIDTH="178.49999 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Add-on opbouwen"/>
+<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
+<attribute NAME="addons.${name}.encodeTranslations" VALUE="Vertalingen coderen"/>
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on package genereren"/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on documentatie genereren"/>
-<attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
+<attribute NAME="addons.${name}" VALUE="Ontwikkeltools"/>
 <attribute NAME="addons.${name}.insertBinary" VALUE="Binary invoegen"/>
 </node>
 </node>
-<node TEXT="deinstall" POSITION="left" ID="ID_26194671" CREATED="1642769742444" MODIFIED="1642770982873"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="deinstall" POSITION="left" ID="ID_26194671"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -928,8 +928,7 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="38.25 pt" VALUE_WIDTH="350.99999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/addOnDoc.groovy"/>
@@ -947,7 +946,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/devtools-screenshot-1.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/inspectInstalledAddOn.groovy"/>
 </node>
-<node TEXT="zips" POSITION="right" ID="ID_482322757" CREATED="1642769742444" MODIFIED="1642770982932"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="zips" POSITION="right" ID="ID_482322757"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -981,11 +980,10 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
-<node TEXT="scripts" ID="ID_929040161" CREATED="1642769742444" MODIFIED="1642769742444"/>
+</html></richcontent>
+<node TEXT="scripts" ID="ID_929040161"/>
 </node>
-<node TEXT="lib" POSITION="right" ID="ID_492204493" CREATED="1642769742444" MODIFIED="1642770982927"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="lib" POSITION="right" ID="ID_492204493"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -1019,11 +1017,10 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
-<node TEXT="images" POSITION="right" ID="ID_723709077" CREATED="1642769742444" MODIFIED="1642770982946"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="images" POSITION="right" ID="ID_723709077"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -1053,17 +1050,16 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&nbsp;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html>
-</richcontent>
-<node TEXT="${name}.png" ID="ID_1002402838" CREATED="1642769742444" MODIFIED="1642769742444"/>
-<node TEXT="${name}-icon.png" ID="ID_1000617651" CREATED="1642769742444" MODIFIED="1642769742444">
+</html></richcontent>
+<node TEXT="${name}.png" ID="ID_1002402838"/>
+<node TEXT="${name}-icon.png" ID="ID_1000617651">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
-<node TEXT="${name}-screenshot-1.png" ID="ID_1150955427" CREATED="1642769742444" MODIFIED="1642769742444">
+<node TEXT="${name}-screenshot-1.png" ID="ID_1150955427">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 </node>
-<node TEXT="actions" POSITION="right" ID="ID_757744802" CREATED="1642769742444" MODIFIED="1642770982950"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="actions" POSITION="right" ID="ID_757744802"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -1071,12 +1067,11 @@
   <body>
     Direct links to menu commands
   </body>
-</html>
-</richcontent>
-<node TEXT="Build add-on" ID="ID_1113925331" CREATED="1642769742444" MODIFIED="1642769742444" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
-<node TEXT="Package add-on for publication" ID="ID_344644492" CREATED="1642769742444" MODIFIED="1642769742444" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
-<node TEXT="Export Translations" ID="ID_1121027378" CREATED="1642769742444" MODIFIED="1642769742444" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
-<node TEXT="Import Translations" ID="ID_1727643809" CREATED="1642769742444" MODIFIED="1642769742444" LINK="menuitem:_addons.devtools.importTranslations_on_single_node"/>
+</html></richcontent>
+<node TEXT="Build add-on" ID="ID_1113925331" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
+<node TEXT="Package add-on for publication" ID="ID_344644492" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
+<node TEXT="Export Translations" ID="ID_1121027378" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
+<node TEXT="Import Translations" ID="ID_1727643809" LINK="menuitem:_addons.devtools.importTranslations_on_single_node"/>
 </node>
 </node>
 </map>

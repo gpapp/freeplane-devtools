@@ -22,6 +22,9 @@ import javax.swing.JOptionPane
 import javax.swing.JScrollPane
 
 import org.freeplane.plugin.script.proxy.Proxy
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
+
+def config = new ConfigProperties()
 
 messages = []
 // a List<String>
@@ -193,16 +196,17 @@ root.note = withBody '''
 </html>
 '''
 
+
 createMissingAttributes(root, [
     'name',
     'version',
     'author',
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
-    'updateUrl',
-    'downloadUrl',
-    'changelogUrl',
-    ['addonsMenu',	'main_menu_scripting']
+    ['updateUrl'   ,  config.getProperty('devtools_updateUrl'  , '${homepage}/version.properties' ).replace('S{','${') ],
+    ['downloadUrl' ,  config.getProperty('devtools_downloadUrl', '${homepage}/'                   ).replace('S{','${') ],
+    'changelogUrl' ,
+    ['addonsMenu'  ,  config.getProperty('devtools_addonsMenu' , 'main_menu_scripting'            ).replace('S{','${') ]
 ])
 
 
@@ -444,13 +448,13 @@ if (node.map.file != null) {
     def scriptsDirs = []
     scriptsDirs << new File(node.map.file.parent, 'scripts')
     // includes scripts locations in case of Gradle plugin
-	try {
-	    if (node.map.file.parentFile.parentFile.name == 'src') {
-	        scriptsDirs << new File(node.map.file.parentFile.parent, 'scripts')
-	    }
-	} catch (Exception e) {
-		logger.warn('Why do you store your add-on definition mind map in a root directory?\n', e)
-	}
+    try {
+        if (node.map.file.parentFile.parentFile.name == 'src') {
+            scriptsDirs << new File(node.map.file.parentFile.parent, 'scripts')
+        }
+    } catch (Exception e) {
+        logger.warn('Why do you store your add-on definition mind map in a root directory?\n', e)
+    }
     scriptsDirs.each {
         if (it.exists()) {
             it.eachFileRecurse(FileType.FILES) { file ->
@@ -458,8 +462,8 @@ if (node.map.file != null) {
             if (filesToExclude.indexOf(fileName) == -1
                 && scriptsNode.children.find { it.text.contains(fileName) } == null)
             {
-					scriptsNode.createChild(fileName)
-			}
+                    scriptsNode.createChild(fileName)
+            }
         }
     }
 }
@@ -670,3 +674,4 @@ if (missing) {
 //
 def messagesString = messages.collect{ htmlUtils.htmlToPlain(it).replace('\n', '<br>') }.join('</li><li>')
 ui.informationMessage('<html><body><b>Please review this changes carefully:</b><ul><li>' + messagesString +'</li></ul></body></html>')
+
