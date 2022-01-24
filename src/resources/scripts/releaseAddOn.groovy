@@ -325,7 +325,7 @@ try {
     counts.translations = updateTranslations(releaseMapRoot)     // added by gpapp
     createLatestVersionFile(releaseMapRoot)
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
-    releaseMapRoot.children.find{it.plainText == 'actions'}.delete()
+    releaseMapRoot.children.find{it.plainText == 'actions'}?.delete()
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()
