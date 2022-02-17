@@ -66,6 +66,7 @@ def createMissingAttributes(Proxy.Node node, List<String> attributes) {
             addMessage("Created attribute '$name' = '$value' in '${node.plainText}'")
         }
     }
+    node.attributes.optimizeWidths()
 }
 
 def toPhrase(String texto){
@@ -95,6 +96,38 @@ String withBody(String body) {
   </body>
 </html>
 '''
+}
+
+
+def createPreferencesXmlText(nodo, name){
+    def texto = """<?xml version="1.0" encoding="UTF-8"?>
+<preferences_structure>
+         <tabbed_pane>
+                  <tab name="plugins">
+                            <separator name = "$name">
+"""
+    def leadingSpaces = ' ' * 36
+    nodo.attributes.each{a -> 
+        def vals = a.value.toString().replace(' ','').split(',')
+        switch(vals[0].toString().toLowerCase()){
+            case ['boolean','string'] :
+                texto += leadingSpaces + "<${vals[0].toString().toLowerCase()} name = \"${name}_${a.key.toString().replace(' ','')}\"/>\n"
+                break
+           case 'number'  :
+                texto += vals.size() == 3 ? 
+                            leadingSpaces + "<number name  = \"${name}_${a.key.toString()}\" min=\"${vals[1]}\" max=\"${vals[2]}\"/>\n"
+                            : "\n\n-------- Attribute has wrong number of parameters: -------\n ${a.key}   :   ${a.value} \n${'-' * 50}\n\n"
+                break
+             default :
+                texto += "\n\n-------- Attribute not recognized: -------\n ${a.key}   :   ${a.value} \n${'-' * 50}\n\n"
+                break
+        }
+    }
+    texto += '''                           </separator>
+                  </tab>
+         </tabbed_pane>
+</preferences_structure>'''
+    return texto.toString()
 }
 
 // ======================================================================
@@ -269,19 +302,128 @@ Change the license if needed.''')
 //
 // ============ preferences.xml ============
 //
-findOrCreate(root, 'preferences.xml', LEFT).note = withBody '''
+def preferencesNode = findOrCreate(root, 'preferences.xml', LEFT)
+preferencesNode.note = withBody '''
     <p>
-      <font color="#000000" face="SansSerif, sans-serif">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </font>
+      <font color="#000000" face="SansSerif, sans-serif">The child node contains the add-on configuration as an extension to 
+      mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </font>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&#160;node.</font>
+      <font color="#000000" face="SansSerif, sans-serif">&nbsp;</font>
     </p>
+    <p>
+      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node. 
+      </font>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <b>Automatic way (new since v0.9.30): </b>
+    </p>
+    <p>
+      you can add the preferences parameters as attributes to this node and 
+      then, by checking AddOn it will:
+    </p>
+    <ul>
+      <li>
+        create the child node containing <font color="#000000" face="SansSerif, sans-serif">the add-on configuration as an 
+        extension to mindmapmodemenu.xml</font>
+      </li>
+      <li>
+        add the properties to the <font color="#000000" face="SansSerif, sans-serif"><i>default.properties</i>&nbsp;node</font>
+      </li>
+      <li>
+        add the properties to the <i>translations</i><font color="#000000" face="SansSerif, sans-serif">&nbsp;node</font>
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>How? </b>
+    </p>
+    <ul>
+      <li>
+        Add an attribute for each preference.
+      </li>
+      <li>
+        the attribute name should be the preference name.
+      </li>
+      <li>
+        as attribute value you should specify if it is a <b>boolean</b>, <b>string</b>&nbsp;or 
+        <b>number</b>&nbsp;preference
+      </li>
+      <li>
+        if it is a <b>number</b>&nbsp;preference. you should add the min and max 
+        value for it (separed by comma)
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>Example: </b>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Attributes:
+    </p>
+    <table border="0" style="width: 80%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0">
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            isStudent
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            boolean
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            userName
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            string
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            birthMonth
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            number,1,12
+          </p>
+        </td>
+      </tr>
+    </table>
 '''
+
+//if preferencesNode has attributes, it creates the preferences xml text node
+if(preferencesNode.attributes){
+    preferencesNode.children*.delete()
+    preferencesNode.createChild(createPreferencesXmlText(preferencesNode,'\${name}')).style.setMaxNodeWidth('20 cm')
+    addMessage('updated node with preferences XML text')
+}
+
 
 //
 // ============ default.properties ============
 //
-findOrCreate(root, 'default.properties', LEFT).note = withBody '''
+def defaultPropsNode = findOrCreate(root, 'default.properties', LEFT)
+defaultPropsNode.note = withBody '''
     <p>
       These properties are used for:
     </p>
@@ -294,6 +436,11 @@ findOrCreate(root, 'default.properties', LEFT).note = withBody '''
       </li>
     </ul>
 '''
+
+def preferencesNames = preferencesNode.attributes.names.collect{ '${name}_' + it.replace(' ' ,'') }
+if(preferencesNode.attributes){
+    createMissingAttributes(defaultPropsNode, preferencesNames)
+}
 
 //
 // ============ translations ============
@@ -320,6 +467,15 @@ createMissingAttributes(englishTranslationsNode, [
     [ 'addons.${name}', addOnName ]
 ])
 // englishTranslationsNode will be accessed later for script name translations
+
+if(preferencesNode.attributes){
+    def preferencesTranslationKeys = [ [ 'OptionPanel.separator.${name}' , addOnName ] ]
+    preferencesNames.each{nom ->
+        def t = 'OptionPanel.' + nom
+        preferencesTranslationKeys << t << t + '.tooltip'
+    }
+    createMissingAttributes(englishTranslationsNode, preferencesTranslationKeys)
+}
 
 //
 // ============ uninstall ============

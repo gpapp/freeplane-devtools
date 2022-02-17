@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="devtools" FOLDED="false" ID="ID_1723255651" LINK="https://github.com/EdoFro/freeplane-devtools" BACKGROUND_COLOR="#97c7dc" VGAP_QUANTITY="2 pt">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
-<attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="179.99999 pt"/>
+<attribute_layout NAME_WIDTH="117 pt" VALUE_WIDTH="291.74999 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
 <attribute NAME="version" VALUE="v0.9.30"/>
 <attribute NAME="author" VALUE="Volker Börchers, Henk van den Akker, Gergely Papp, Edo Frohlich"/>
@@ -51,8 +51,9 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
-<hook NAME="MapStyle">
+</html>
+</richcontent>
+<hook NAME="MapStyle" zoom="0.909">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="default" fit_to_viewport="false"/>
 
 <map_styles>
@@ -135,7 +136,8 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node ID="ID_1187826020" BACKGROUND_COLOR="#ffff75" VSHIFT_QUANTITY="2.25 pt"><richcontent TYPE="NODE">
 
@@ -320,7 +322,8 @@
       &nbsp;&nbsp;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="checkAddOn.groovy" ID="ID_1651569668"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -644,7 +647,8 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="v0.9" FOLDED="true" ID="ID_781192802">
 <node TEXT="Initial version" ID="ID_1996473369"/>
 </node>
@@ -772,6 +776,7 @@
 </node>
 <node TEXT="v0.9.30" ID="ID_1353343071">
 <node TEXT="bug fixes" ID="ID_455683896"/>
+<node TEXT="Added parametric preferences.xml" ID="ID_1150518564"/>
 </node>
 </node>
 <node TEXT="license" FOLDED="true" POSITION="left" ID="ID_770036552"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -790,7 +795,8 @@
       The License text has to be entered as a child of the <i>'license'</i>&nbsp;node, either as plain text or as HTML.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="This add-on is free software: you can redistribute it and/or modify&#xa;it under the terms of the GNU General Public License as published by&#xa;the Free Software Foundation, either version 2 of the License, or&#xa;(at your option) any later version.&#xa;&#xa;This program is distributed in the hope that it will be useful,&#xa;but WITHOUT ANY WARRANTY; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xa;GNU General Public License for more details." ID="ID_1912443753"/>
 </node>
@@ -804,18 +810,115 @@
       <font color="#000000" face="SansSerif, sans-serif">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </font>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node.</font>
+      <font color="#000000" face="SansSerif, sans-serif">&nbsp;</font>
     </p>
+    <p>
+      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node. </font>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <b>Automatic way (new since v0.9.30): </b>
+    </p>
+    <p>
+      you can add the preferences parameters as attributes to this node and then, by checking AddOn it will:
+    </p>
+    <ul>
+      <li>
+        create the child node containing <font color="#000000" face="SansSerif, sans-serif">the add-on configuration as an extension to mindmapmodemenu.xml</font>
+      </li>
+      <li>
+        add the properties to the <font color="#000000" face="SansSerif, sans-serif"><i>default.properties</i>&nbsp;node</font>
+      </li>
+      <li>
+        add the properties to the <i>translations</i><font color="#000000" face="SansSerif, sans-serif">&nbsp;node</font>
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>How? </b>
+    </p>
+    <ul>
+      <li>
+        Add an attribute for each preference.
+      </li>
+      <li>
+        the attribute name should be the preference name.
+      </li>
+      <li>
+        as attribute value you should specify if it is a <b>boolean</b>, <b>string</b>&nbsp;or <b>number</b>&nbsp;preference
+      </li>
+      <li>
+        if it is a <b>number</b>&nbsp;preference. you should add the min and max value for it (separed by comma)
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>Example: </b>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Attributes:
+    </p>
+    <table border="0" style="width: 80%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0">
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            isStudent
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            boolean
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            userName
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            string
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            birthMonth
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            number,1,12
+          </p>
+        </td>
+      </tr>
+    </table>
   </body>
-</html></richcontent>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                           &lt;separator name = &quot;devtools&quot;&gt;&#xa;                                    &lt;string name = &quot;devtools_addonsMenu&quot; /&gt;&#xa;                                    &lt;string name = &quot;devtools_updateUrl&quot; /&gt;&#xa;                                    &lt;string name = &quot;devtools_downloadUrl&quot; /&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1295817689"/>
+</html>
+</richcontent>
+<attribute NAME="addonsMenu" VALUE="string"/>
+<attribute NAME="updateUrl" VALUE="string"/>
+<attribute NAME="downloadUrl" VALUE="string"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;string name = &quot;${name}_addonsMenu&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_updateUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_downloadUrl&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_414103802" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="left" ID="ID_1363888784">
-<attribute_layout NAME_WIDTH="138.75 pt" VALUE_WIDTH="138.75 pt"/>
+<attribute_layout NAME_WIDTH="119.25 pt" VALUE_WIDTH="158.25 pt"/>
 <attribute NAME="${name}.icon" VALUE="/images/${name}-icon.png"/>
-<attribute NAME="devtools_addonsMenu" VALUE="main_menu_scripting"/>
-<attribute NAME="devtools_updateUrl" VALUE="S{homepage}/version.properties"/>
-<attribute NAME="devtools_downloadUrl" VALUE="S{homepage}/"/>
+<attribute NAME="${name}_addonsMenu" VALUE="main_menu_scripting"/>
+<attribute NAME="${name}_updateUrl" VALUE="S{homepage}/version.properties"/>
+<attribute NAME="${name}_downloadUrl" VALUE="S{homepage}/"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -834,9 +937,10 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node TEXT="translations" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="translations" FOLDED="true" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -857,9 +961,10 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
-<node TEXT="de" ID="ID_1722341139">
-<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="195.74999 pt"/>
+</html>
+</richcontent>
+<node TEXT="de" ID="ID_996503158">
+<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="179.99999 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Komplettiere Add-on"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Men\u00FCeintrag-Details"/>
 <attribute NAME="addons.${name}.importTranslations" VALUE="\u00DCbersetzungen importieren"/>
@@ -867,34 +972,33 @@
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Add-on-Package erzeugen"/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Add-on-Dokumentation erzeugen"/>
 <attribute NAME="addons.${name}" VALUE="Entwicklungswerkzeuge"/>
-<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Add-on Eigenschaften erhalten"/>
 <attribute NAME="addons.${name}.extractBinary" VALUE="Knoten in Bin\u00E4rdatei extrahieren"/>
 <attribute NAME="addons.${name}.insertBinary" VALUE="Binärdatei einfügen"/>
 <attribute NAME="addons.${name}.exportTranslations" VALUE="\u00DCbersetzungen exportieren"/>
 </node>
-<node TEXT="en" ID="ID_332027216">
-<attribute_layout NAME_WIDTH="198.74999 pt" VALUE_WIDTH="422.99999 pt"/>
-<attribute NAME="OptionPanel.devtools_updateUrl.tooltip" VALUE="URL of the file containing information (version, download url) on the latest version of this add-on. \nBy default: &quot;${homepage}/version.properties&quot;"/>
+<node TEXT="en" ID="ID_1080797994">
+<attribute_layout NAME_WIDTH="199.49999 pt" VALUE_WIDTH="912.74997 pt"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
-<attribute NAME="OptionPanel.devtools_addonsMenu.tooltip" VALUE="Defines the addon&apos;s main menu location in Freeplane&apos;s UI, defaults menu &apos;main_menu_scripting&apos;"/>
 <attribute NAME="addons.${name}.importTranslations" VALUE="Import Translations"/>
-<attribute NAME="OptionPanel.devtools_updateUrl" VALUE="Update URL"/>
 <attribute NAME="addons.${name}.encodeTranslations" VALUE="Encode translations"/>
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Package add-on for publication"/>
 <attribute NAME="addons.${name}" VALUE="Developer Tools"/>
+<attribute NAME="OptionPanel.${name}_downloadUrl" VALUE="Download URL"/>
 <attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
-<attribute NAME="OptionPanel.devtools_downloadUrl" VALUE="Download URL"/>
-<attribute NAME="OptionPanel.devtools_addonsMenu" VALUE="Add-on&apos;s menu "/>
-<attribute NAME="OptionPanel.separator.devtools" VALUE="Developer Tools"/>
-<attribute NAME="OptionPanel.devtools_downloadUrl.tooltip" VALUE="URL from the place where the AddOn file will be available for downloading. \nBy default is the same as the homepage. \nYou can define a different place or a subfolder of the homepage. \nExample: &quot;${homepage}/files/&quot;"/>
+<attribute NAME="OptionPanel.${name}_addonsMenu.tooltip" VALUE="Defines the addon&apos;s main menu location in Freeplane&apos;s UI, defaults menu &apos;main_menu_scripting&apos;"/>
+<attribute NAME="OptionPanel.separator.${name}" VALUE="Developer Tools"/>
+<attribute NAME="OptionPanel.${name}_downloadUrl.tooltip" VALUE="URL from the place where the AddOn file will be available for downloading. \nBy default is the same as the homepage. \nYou can define a different place or a subfolder of the homepage. \nExample: &quot;${homepage}/files/&quot;"/>
+<attribute NAME="OptionPanel.${name}_addonsMenu" VALUE="Add-on&apos;s menu "/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
+<attribute NAME="OptionPanel.${name}_updateUrl" VALUE="Update URL"/>
+<attribute NAME="OptionPanel.${name}_updateUrl.tooltip" VALUE="URL of the file containing information (version, download url) on the latest version of this add-on. \nBy default: &quot;${homepage}/version.properties&quot;"/>
 <attribute NAME="addons.${name}.inspectInstalledAddOn" VALUE="Add-on properties info"/>
 <attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
 <attribute NAME="addons.${name}.exportTranslations" VALUE="Export Translations"/>
 </node>
-<node TEXT="es" ID="ID_298957055">
-<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="195.74999 pt"/>
+<node TEXT="es" ID="ID_1654983484">
+<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="190.49999 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Construir add-on"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Información de ítem de menú"/>
 <attribute NAME="addons.${name}.importTranslations" VALUE="Importar traducciones"/>
@@ -902,13 +1006,12 @@
 <attribute NAME="addons.${name}.releaseAddOn" VALUE="Empaquetar add-on para su publicación"/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Generar documentación de add-on"/>
 <attribute NAME="addons.${name}" VALUE="Herramientas para desarrolladores"/>
-<attribute NAME="﻿addons.${name}.inspectInstalledAddOn" VALUE="Información de propiedades de add-on"/>
 <attribute NAME="addons.${name}.extractBinary" VALUE="Extraer binario"/>
 <attribute NAME="addons.${name}.insertBinary" VALUE="Insertar binario"/>
 <attribute NAME="addons.${name}.exportTranslations" VALUE="Exportar traducciones"/>
 </node>
-<node TEXT="nl" ID="ID_1408666602">
-<attribute_layout NAME_WIDTH="178.49999 pt" VALUE_WIDTH="178.49999 pt"/>
+<node TEXT="nl" ID="ID_1255099843">
+<attribute_layout NAME_WIDTH="178.49999 pt" VALUE_WIDTH="157.5 pt"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Add-on opbouwen"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
 <attribute NAME="addons.${name}.encodeTranslations" VALUE="Vertalingen coderen"/>
@@ -928,7 +1031,8 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout NAME_WIDTH="38.25 pt" VALUE_WIDTH="350.99999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/addOnDoc.groovy"/>
@@ -980,7 +1084,8 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="scripts" ID="ID_929040161"/>
 </node>
 <node TEXT="lib" POSITION="right" ID="ID_492204493"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -1017,7 +1122,8 @@
       &nbsp;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout VALUE_WIDTH="100 pt"/>
 </node>
 <node TEXT="images" POSITION="right" ID="ID_723709077"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -1050,7 +1156,8 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&nbsp;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="${name}.png" ID="ID_1002402838"/>
 <node TEXT="${name}-icon.png" ID="ID_1000617651">
 <attribute_layout VALUE_WIDTH="100 pt"/>
@@ -1067,7 +1174,8 @@
   <body>
     Direct links to menu commands
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Build add-on" ID="ID_1113925331" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_344644492" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 <node TEXT="Export Translations" ID="ID_1121027378" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
