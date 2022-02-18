@@ -412,10 +412,17 @@ preferencesNode.note = withBody '''
 '''
 
 //if preferencesNode has attributes, it creates the preferences xml text node
+def checkPreferences = false
 if(preferencesNode.attributes){
-    preferencesNode.children*.delete()
-    preferencesNode.createChild(createPreferencesXmlText(preferencesNode,'\${name}')).style.setMaxNodeWidth('20 cm')
-    addMessage('updated node with preferences XML text')
+    def texto = createPreferencesXmlText(preferencesNode,'\${name}')
+    def nodo  = preferencesNode.children[0]?:preferencesNode.createChild()
+    if ( texto != nodo.plainText ){
+        nodo.text = texto
+        nodo.style.setMaxNodeWidth('20 cm')
+        addMessage('Updated node with preferences XML text. Please check if it\'s right and repeat Build AddOn command.')
+    } else {
+        checkPreferences = true
+    } 
 }
 
 
@@ -438,7 +445,7 @@ defaultPropsNode.note = withBody '''
 '''
 
 def preferencesNames = preferencesNode.attributes.names.collect{ '${name}_' + it.replace(' ' ,'') }
-if(preferencesNode.attributes){
+if( checkPreferences && preferencesNode.attributes ){
     createMissingAttributes(defaultPropsNode, preferencesNames)
 }
 
@@ -468,13 +475,13 @@ createMissingAttributes(englishTranslationsNode, [
 ])
 // englishTranslationsNode will be accessed later for script name translations
 
-if(preferencesNode.attributes){
+if( checkPreferences && preferencesNode.attributes ){
     def preferencesTranslationKeys = [ [ 'OptionPanel.separator.${name}' , addOnName ] ]
     preferencesNames.each{nom ->
         def t = 'OptionPanel.' + nom
         preferencesTranslationKeys << t << t + '.tooltip'
     }
-    createMissingAttributes(englishTranslationsNode, preferencesTranslationKeys)
+    createMissingAttributes( englishTranslationsNode, preferencesTranslationKeys )
 }
 
 //

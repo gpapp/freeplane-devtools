@@ -911,7 +911,7 @@
 <attribute NAME="addonsMenu" VALUE="string"/>
 <attribute NAME="updateUrl" VALUE="string"/>
 <attribute NAME="downloadUrl" VALUE="string"/>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;string name = &quot;${name}_addonsMenu&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_updateUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_downloadUrl&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_414103802" MAX_WIDTH="20 cm"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;string name = &quot;${name}_addonsMenu&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_updateUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_downloadUrl&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_695932748" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="left" ID="ID_1363888784">
 <attribute_layout NAME_WIDTH="119.25 pt" VALUE_WIDTH="158.25 pt"/>
@@ -940,7 +940,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="translations" FOLDED="true" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="translations" POSITION="left" ID="ID_1289155258"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
