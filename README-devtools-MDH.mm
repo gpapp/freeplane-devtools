@@ -1,17 +1,17 @@
-<map version="freeplane 1.9.8">
+<map version="freeplane 1.9.13">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="hide"/>
 <node LOCALIZED_TEXT="new_mindmap" FOLDED="false" ID="ID_696401721" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle">
-    <properties mapUsesOwnSaveOptions="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" followedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" save_folding="default" associatedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" fit_to_viewport="false" save_modification_times="false" followedMapLastTime="1642350882829" save_last_visited_node="default" show_note_icons="true" show_notes_in_map="false"/>
+<hook NAME="MapStyle" zoom="0.909">
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" associatedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" followedTemplateLocation="template:/MarkdownHelper/MarkdownHelper%20template.mm" show_icon_for_attributes="true" show_notes_in_map="false" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="default" followedMapLastTime="1642350882829" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_1758066171" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-29.25 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-28.5 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -425,7 +425,7 @@ blockquote {
 <node TEXT="bye,&#xa;&#xa;edo" ID="ID_965908873"/>
 </node>
 </node>
-<node TEXT="Description" ID="ID_328053546" VGAP_QUANTITY="2 pt">
+<node TEXT="Description" FOLDED="true" ID="ID_328053546" VGAP_QUANTITY="2 pt">
 <attribute_layout VALUE_WIDTH="100 pt"/>
 <node TEXT="This add-on collects some utilities that script and/or add-on developers will find useful." ID="ID_1307232320"/>
 <node TEXT="The functions are available under Tools -&gt; Development Tools" ID="ID_430754274"/>
@@ -656,12 +656,31 @@ blockquote {
 <node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1343062747">
 <node TEXT="It transform a camelCase file name into a normal phrase" ID="ID_240366936"/>
 </node>
-<node TEXT="&quot;**Package add-on for publication**&quot; can now open the new add-on for directly installation" ID="ID_250352766"/>
+<node TEXT="&quot;**Package add-on for publication**&quot; can now open the new add-on for direct installation" ID="ID_250352766"/>
+</node>
+</node>
+<node TEXT="New in v0.9.30:" ID="ID_250849647">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_955469551"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="Now you can add the **preference parameters** as *attributes* in the &quot;preferences.xml&quot; node and it will automatically" ID="ID_1073930958">
+<node TEXT="**build the XML** text as the child node" ID="ID_1885095672"/>
+<node TEXT="add the preferences to the **properties.default** node, where you can define their default values" ID="ID_685855381"/>
+<node TEXT="add the preferences to the **translations** node, where you can define their **Option panel**  *labels* and *tooltips* texts" ID="ID_1547385581"/>
 </node>
 </node>
 </node>
 </node>
-<node TEXT="Change Log" ID="ID_309963735">
+</node>
+<node TEXT="Change Log" FOLDED="true" ID="ID_309963735">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -673,7 +692,11 @@ blockquote {
     </p>
   </body>
 </html></richcontent>
-<node TEXT="v0.9.29" ID="ID_1414945820">
+<node TEXT="v0.9.30" ID="ID_1353343071">
+<node TEXT="bug fixes" ID="ID_455683896"/>
+<node TEXT="Added parametric preferences.xml" ID="ID_1150518564"/>
+</node>
+<node TEXT="v0.9.29" FOLDED="true" ID="ID_1414945820">
 <node TEXT="Added inspectInstalledAddOn" ID="ID_1828357472"/>
 <node TEXT="Added &quot;Export Translations&quot; and &quot;Import Translations&quot; to &quot;actions&quot; node" ID="ID_1249621287"/>
 <node TEXT="Now it proposes a menu text for the new scripts based on its file name" ID="ID_1682924207"/>
