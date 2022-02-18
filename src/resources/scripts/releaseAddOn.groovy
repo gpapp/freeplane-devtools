@@ -285,6 +285,13 @@ private String shortenAndWrap(Collection<String> strings, int entrysize) {
     strings.collect { StringUtils.abbreviate(WordUtils.wrap(it, 80, '\n  ', true), entrysize) }.join('\n')
 }
 
+private updatePreferencesXml(Proxy.Node root){
+    def preferencesXmlNode = root.children.find{it.plainText == 'preferences.xml'}?.children[0]
+    if(preferencesXmlNode){
+        preferencesXmlNode.text = expand(root, preferencesXmlNode.plainText)
+    }
+}
+
 //
 // ======================= MAIN =======================
 //
@@ -325,7 +332,8 @@ try {
     counts.translations = updateTranslations(releaseMapRoot)     // added by gpapp
     createLatestVersionFile(releaseMapRoot)
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
-    releaseMapRoot.children.find{it.plainText == 'actions'}.delete()
+    releaseMapRoot.children.find{it.plainText == 'actions'}?.delete()
+    updatePreferencesXml(releaseMapRoot)
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()
