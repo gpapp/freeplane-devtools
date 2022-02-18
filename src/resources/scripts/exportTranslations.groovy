@@ -27,7 +27,10 @@ if (dir.isDirectory()) {
             properties[k] = v
         }
         //msg properties.sort()
-        properties.store(propsFile.newWriter('UTF-8'), null)
+        def writer = propsFile.newWriter('UTF-8')
+        properties.store(writer, null)
+        writer.flush()
+        writer.close()
         filesAdded++
     }
     msg "$filesAdded translation${filesAdded==1?'':'s'} exported to $dir"
