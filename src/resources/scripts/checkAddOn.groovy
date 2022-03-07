@@ -236,10 +236,10 @@ createMissingAttributes(root, [
     'author',
     'freeplaneVersionFrom',
     'freeplaneVersionTo',
-    ['updateUrl'   ,  config.getProperty('devtools_updateUrl'  , '${homepage}/version.properties' ).replace('S{','${') ],
-    ['downloadUrl' ,  config.getProperty('devtools_downloadUrl', '${homepage}/'                   ).replace('S{','${') ],
-    'changelogUrl' ,
-    ['addonsMenu'  ,  config.getProperty('devtools_addonsMenu' , 'main_menu_scripting'            ).replace('S{','${') ]
+    ['updateUrl'   ,  config.getProperty('devtools_updateUrl'   , '${homepage}/version.properties' ).replace('S{','${') ],
+    ['downloadUrl' ,  config.getProperty('devtools_downloadUrl' , '${homepage}/'                   ).replace('S{','${') ],
+    ['changelogUrl',  config.getProperty('devtools_changelogUrl', '${homepage}/history.txt'        ).replace('S{','${') ],
+    ['addonsMenu'  ,  config.getProperty('devtools_addonsMenu'  , 'main_menu_scripting'            ).replace('S{','${') ]
 ])
 
 

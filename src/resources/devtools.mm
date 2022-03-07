@@ -4,14 +4,14 @@
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <attribute_layout NAME_WIDTH="117 pt" VALUE_WIDTH="291.74999 pt"/>
 <attribute NAME="name" VALUE="devtools"/>
-<attribute NAME="version" VALUE="v0.9.30"/>
+<attribute NAME="version" VALUE="v0.9.31"/>
 <attribute NAME="author" VALUE="Volker Börchers, Henk van den Akker, Gergely Papp, Edo Frohlich"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.8.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
-<attribute NAME="updateUrl" VALUE="${homepage}/releases/latest/download/version.properties"/>
 <attribute NAME="addonsMenu" VALUE="main_menu_scripting"/>
 <attribute NAME="downloadUrl" VALUE="${homepage}/releases/download/${version}/"/>
-<attribute NAME="changelogUrl" VALUE=""/>
+<attribute NAME="updateUrl" VALUE="${homepage}/releases/latest/download/version.properties"/>
+<attribute NAME="changelogUrl" VALUE="${homepage}/releases/latest/download/history.md"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -778,6 +778,10 @@
 <node TEXT="bug fixes" ID="ID_455683896"/>
 <node TEXT="Added parametric preferences.xml" ID="ID_1150518564"/>
 </node>
+<node TEXT="v0.9.31" ID="ID_1185204241">
+<node TEXT="now it creates and updates &apos;history.md&apos; file" ID="ID_1372738195"/>
+<node TEXT="adds changelogurl property to version.properties file" ID="ID_846931039"/>
+</node>
 </node>
 <node TEXT="license" FOLDED="true" POSITION="left" ID="ID_770036552"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -908,17 +912,20 @@
   </body>
 </html>
 </richcontent>
+<attribute_layout NAME_WIDTH="78.75 pt" VALUE_WIDTH="48 pt"/>
 <attribute NAME="addonsMenu" VALUE="string"/>
 <attribute NAME="updateUrl" VALUE="string"/>
 <attribute NAME="downloadUrl" VALUE="string"/>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;string name = &quot;${name}_addonsMenu&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_updateUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_downloadUrl&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_695932748" MAX_WIDTH="20 cm"/>
+<attribute NAME="changelogUrl" VALUE="string"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;string name = &quot;${name}_addonsMenu&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_updateUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_downloadUrl&quot;/&gt;&#xa;                                    &lt;string name = &quot;${name}_changelogUrl&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_695932748" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="left" ID="ID_1363888784">
-<attribute_layout NAME_WIDTH="119.25 pt" VALUE_WIDTH="158.25 pt"/>
+<attribute_layout NAME_WIDTH="120.75 pt" VALUE_WIDTH="158.25 pt"/>
 <attribute NAME="${name}.icon" VALUE="/images/${name}-icon.png"/>
 <attribute NAME="${name}_addonsMenu" VALUE="main_menu_scripting"/>
 <attribute NAME="${name}_updateUrl" VALUE="S{homepage}/version.properties"/>
-<attribute NAME="${name}_downloadUrl" VALUE="S{homepage}/"/>
+<attribute NAME="${name}_downloadUrl" VALUE="S{homepage}"/>
+<attribute NAME="${name}_changelogUrl" VALUE="S{homepage}/history.md"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -977,7 +984,7 @@
 <attribute NAME="addons.${name}.exportTranslations" VALUE="\u00DCbersetzungen exportieren"/>
 </node>
 <node TEXT="en" ID="ID_1080797994">
-<attribute_layout NAME_WIDTH="199.49999 pt" VALUE_WIDTH="912.74997 pt"/>
+<attribute_layout NAME_WIDTH="200.99999 pt" VALUE_WIDTH="910.49997 pt"/>
 <attribute NAME="addons.${name}.menuItemInfo" VALUE="Menu item info"/>
 <attribute NAME="addons.${name}.checkAddOn" VALUE="Build add-on"/>
 <attribute NAME="addons.${name}.importTranslations" VALUE="Import Translations"/>
@@ -988,14 +995,16 @@
 <attribute NAME="addons.${name}.insertBinary" VALUE="Insert Binary"/>
 <attribute NAME="OptionPanel.${name}_addonsMenu.tooltip" VALUE="Defines the addon&apos;s main menu location in Freeplane&apos;s UI, defaults menu &apos;main_menu_scripting&apos;"/>
 <attribute NAME="OptionPanel.separator.${name}" VALUE="Developer Tools"/>
-<attribute NAME="OptionPanel.${name}_downloadUrl.tooltip" VALUE="URL from the place where the AddOn file will be available for downloading. \nBy default is the same as the homepage. \nYou can define a different place or a subfolder of the homepage. \nExample: &quot;${homepage}/files/&quot;"/>
+<attribute NAME="OptionPanel.${name}_downloadUrl.tooltip" VALUE="URL from the place where the AddOn file will be available for downloading. \nBy default is the same as the homepage. \nYou can define a different place or a subfolder of the homepage. \nExample: &quot;${homepage}/files&quot;"/>
 <attribute NAME="OptionPanel.${name}_addonsMenu" VALUE="Add-on&apos;s menu "/>
 <attribute NAME="addons.${name}.addOnDoc" VALUE="Generate add-on documentation"/>
 <attribute NAME="OptionPanel.${name}_updateUrl" VALUE="Update URL"/>
-<attribute NAME="OptionPanel.${name}_updateUrl.tooltip" VALUE="URL of the file containing information (version, download url) on the latest version of this add-on. \nBy default: &quot;${homepage}/version.properties&quot;"/>
+<attribute NAME="OptionPanel.${name}_updateUrl.tooltip" VALUE="URL of the file containing information (version, download url, change log url) on the latest version of this add-on. \nBy default: &quot;${homepage}/version.properties&quot;"/>
 <attribute NAME="addons.${name}.inspectInstalledAddOn" VALUE="Add-on properties info"/>
 <attribute NAME="addons.${name}.extractBinary" VALUE="Extract Binary"/>
 <attribute NAME="addons.${name}.exportTranslations" VALUE="Export Translations"/>
+<attribute NAME="OptionPanel.${name}_changelogUrl" VALUE="Change log URL"/>
+<attribute NAME="OptionPanel.${name}_changelogUrl.tooltip" VALUE="URL of the file containing the history of the changes done to the AddOn in each release. \nBy default: &quot;${homepage}/history.md&quot;\nother example: &quot;${downloadUrl}/history.md&quot;"/>
 </node>
 <node TEXT="es" ID="ID_1654983484">
 <attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="190.49999 pt"/>
