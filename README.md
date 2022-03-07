@@ -13,7 +13,7 @@ And its official websites are:
 
 In this fork I united the last version from [HaaiHenkie](https://sourceforge.net/u/haaihenkie/profile/) ([v.0.9.27](https://github.com/HaaiHenkie/addons/tree/fix-bug-2847), look this [thread](https://sourceforge.net/p/freeplane/bugs/2847/)) with the [version](https://github.com/gpapp/freeplane-devtools) from [gpapp](https://sourceforge.net/u/gergelypapp/profile/) .
 
-The instalable file (```devtools-v0.9.30.addon.mm```) of the latest version of the this fork can be downloaded from [here](https://github.com/EdoFro/freeplane-devtools/releases/latest/).
+The instalable file (```devtools-v0.9.31.addon.mm```) of the latest version of the this fork can be downloaded from [here](https://github.com/EdoFro/freeplane-devtools/releases/latest/).
 
 bye,
 
@@ -122,15 +122,28 @@ The functions are available under Tools -> Development Tools
    * It transform a camelCase file name into a normal phrase
 * "**Package add-on for publication**" can now open the new add-on for direct installation
 
-#### 2.3.5. New in v0.9.30:
+### 2.4. New in v0.9.30:
 
 * Now you can add the **preference parameters** as *attributes* in the "preferences.xml" node and it will automatically
    * **build the XML** text as the child node
    * add the preferences to the **properties.default** node, where you can define their default values
    * add the preferences to the **translations** node, where you can define their **Option panel**  *labels* and *tooltips* texts
 
+### 2.5. New in v0.9.31:
+
+* **changeLogURL** added as **preference parameter**
+*  **change log URL** property to **version.properties**
+   * Now it adds the **changelogurl** property to the **version.properties** file
+   * This way the user can download the **History** file directly from Freeplane's **check updates** dialog
+* automatically creates and updates '**history.md**' file
+   * "**Package add-on for publication**" automatically creates a "**history.md**" file using the information form the "**changes**" node
+
 ## 3. Change Log
 
+* v0.9.31
+   * now it creates and updates 'history.md' file
+   * adds changelogurl property to version.properties file
+   * changeLogURL added as preference parameter
 * v0.9.30
    * bug fixes
    * Added parametric preferences.xml

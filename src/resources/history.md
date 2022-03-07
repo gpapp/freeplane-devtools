@@ -2,6 +2,7 @@
 
 ## v0.9.31
 
+* changeLogURL added as preference parameter
 * now it creates and updates 'history.md' file
 * adds changelogurl property to version.properties file
 

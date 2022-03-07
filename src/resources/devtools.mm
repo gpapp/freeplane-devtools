@@ -670,7 +670,7 @@
 </html></richcontent>
 </node>
 </node>
-<node TEXT="changes" FOLDED="true" POSITION="left" ID="ID_309963735"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="changes" POSITION="left" ID="ID_309963735"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -812,6 +812,7 @@
 <node TEXT="Added parametric preferences.xml" ID="ID_1150518564"/>
 </node>
 <node TEXT="v0.9.31" ID="ID_1185204241">
+<node TEXT="changeLogURL added as preference parameter" ID="ID_1782400840"/>
 <node TEXT="now it creates and updates &apos;history.md&apos; file" ID="ID_1372738195"/>
 <node TEXT="adds changelogurl property to version.properties file" ID="ID_846931039"/>
 </node>
