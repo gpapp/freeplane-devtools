@@ -37,8 +37,11 @@ dialogTitle = 'Create release package'
 
 def expand(Proxy.Node attributeNode, String string) {
     // expands strings like "${name}.groovy"
-    string.replaceAll(/\$\{([^}]+)\}/, { match, key -> def v = attributeNode.attributes.map[key]; v ? v : match })
-          .replaceAll(/\$\{([^}]+)\}/, { match, key -> key == 'homepage' ? attributeNode.link.text?: match : match })
+    def tempString = string
+    3.times{
+        tempString = tempString.replaceAll(/\$\{([^}]+)\}/, { match, key -> def v = attributeNode.attributes.map[key]; v ? ( v[-1]=='/' ? v.dropRight(1):v ) : match })
+        }
+    return tempString.replaceAll(/\$\{([^}]+)\}/, { match, key -> key == 'homepage' ? attributeNode.link.text?: match : match })
 }
 
 // returns the count of scripts added
@@ -251,14 +254,33 @@ private createLatestVersionFile(Proxy.Node releaseMapRoot) {
     def freeplaneVersionFrom = releaseMapRoot['freeplaneVersionFrom']
     def homepage = toUrl(releaseMapRoot, releaseMapRoot.link.text)
     def downloadPage = toUrl(releaseMapRoot, releaseMapRoot['downloadUrl'].toString()) ?: homepage
+    
     def releaseMapFileName = new File(mapFile.path.replaceFirst("(\\.addon)?\\.mm", "") + "-${version}.addon.mm").name
     def downloadFile = new File(downloadPage.path, releaseMapFileName)
     def downloadFilePath = downloadFile.path.replace(File.separator, '/')
     def downloadUrl  = new URL(downloadPage.protocol, downloadPage.host, downloadPage.port, downloadFilePath)
+
+    def changelogUrl = toUrl(releaseMapRoot, releaseMapRoot['changelogUrl'].toString()) ?: (homepage.toString() + '/history.txt')
+    //def changelogUrl  = new URL(changelogPage.protocol, changelogPage.host, changelogPage.port, changelogPage )
     file.text = """version=${version}
 downloadUrl=${downloadUrl}
+changelogUrl=${changelogUrl}
 freeplaneVersionFrom=${freeplaneVersionFrom}
 """
+}
+
+private createLatestHistoryFile(Proxy.Node releaseMapRoot) {
+    def mapFile = releaseMapRoot.map.file
+    Proxy.Node changesNode = releaseMapRoot.children.find { it.plainText.matches('changes') }
+    def texto = new StringBuilder("# History\n")
+    changesNode.children.reverse().each{ v ->
+        texto << "\n" << "## ${v.text}"  << "\n\n" 
+        v.children.each{ n ->
+            texto << "* ${n.text}"  << "\n"
+        }
+    }
+    def file = new File(mapFile.parent,  "history.md")
+    file.setText(texto.toString(), 'UTF-8')
 }
 
 private URL toUrl(Proxy.Node root, String urlString) {
@@ -334,6 +356,7 @@ try {
     releaseMapRoot['updateUrl'] = toUrl(releaseMapRoot, releaseMapRoot['updateUrl'].toString()) ?: releaseMapRoot['updateUrl']
     releaseMapRoot.children.find{it.plainText == 'actions'}?.delete()
     updatePreferencesXml(releaseMapRoot)
+    createLatestHistoryFile(releaseMapRoot)
 } catch (Exception e) {
     errors << e.message
     e.printStackTrace()
@@ -353,7 +376,9 @@ with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip
             counts.translations
         } translations.
 
-Also created: 'version.properties' - upload this file to the configured updateUrl!
+Also created: 
+    'version.properties' - upload this file to the configured updateUrl!
+    'history.md'         - upload this file to the configured changelogUrl!
 
 Open the new add-on map ${releaseMapFile.name}?"""
         final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
