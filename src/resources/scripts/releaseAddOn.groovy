@@ -376,7 +376,9 @@ with ${counts.scripts} script(s), ${counts.images} images(s), ${counts.zips} zip
             counts.translations
         } translations.
 
-Also created: 'version.properties' - upload this file to the configured updateUrl!
+Also created: 
+    'version.properties' - upload this file to the configured updateUrl!
+    'history.md'         - upload this file to the configured changelogUrl!
 
 Open the new add-on map ${releaseMapFile.name}?"""
         final int selection = JOptionPane.showConfirmDialog(ui.frame, question, dialogTitle, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
