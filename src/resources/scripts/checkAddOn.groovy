@@ -182,47 +182,89 @@ root.note = withBody '''
       The homepage of this add-on should be set as the link of the root node.
     </p>
     <p>
-      The basic properties of this add-on. They can be used in script names
-      and other attributes, e.g. "${name}.groovy".
+      The basic properties of this add-on. They can be used in script names 
+      and other attributes, e.g. &quot;${name}.groovy&quot;.
     </p>
     <ul>
       <li>
-        name: The name of the add-on, normally a technically one (no spaces,
-        no special characters except _.-).
+        <b>name</b>: The name of the add-on, normally a technically one (no 
+        spaces, no special characters except _.-).
       </li>
       <li>
-        author: Author's name(s) and (optionally) email adresses.
+        <b>author</b>: Author's name(s) and (optionally) email adresses.
       </li>
       <li>
-        version: Since it's difficult to protect numbers like 1.0 from
-        Freeplane's number parser it's advised to prepend a 'v' to the number,
+        <b>version</b>: Since it's difficult to protect numbers like 1.0 from 
+        Freeplane's number parser it's advised to prepend a 'v' to the number, 
         e.g. 'v1.0'.
       </li>
       <li>
-        freeplane-version-from: The oldest compatible Freeplane version. The
-        add-on will not be installed if the Freeplane version is too old.
+        <b>freeplane-version-from</b>: The oldest compatible Freeplane version. 
+        The add-on will not be installed if the Freeplane version is too old.
       </li>
       <li>
-        freeplane-version-to: Normally empty: The newest compatible Freeplane
-        version. The add-on will not be installed if the Freeplane version is
-        too new.
+        <b>freeplane-version-to</b>: Normally empty: The newest compatible 
+        Freeplane version. The add-on will not be installed if the Freeplane 
+        version is too new.
       </li>
       <li>
-        updateUrl: URL of the file containing information (version, download 
-        url) on the latest version of this add-on. By default: 
-        &quot;${homepage}/version.properties&quot;
+        <b>updateUrl</b>: URL of the file containing information (version, 
+        download url) on the latest version of this add-on.<br>By default: 
+        &quot;${homepage}/version.properties&quot;<br>Examples:
+
+        <ul>
+          <li>
+            <b>For GitHub releases</b>: 
+            &quot;${homepage}/releases/latest/download/version.properties&quot;
+          </li>
+          <li>
+            <b>For Github in a folder named like the add-on&nbsp;(in the main 
+            repository branch)</b>: 
+            &quot;${homepage}/raw/main/${name}/version.properties
+          </li>
+          <li>
+            <b>For Github in a folder named like the add-on&nbsp;(in a repository 
+            branch named as the add-on version)</b>: 
+            &quot;${homepage}/raw/${version}/${name}/version.properties&quot;
+          </li>
+        </ul>
       </li>
       <li>
-        addonsMenu: Defines the addon's main menu location, defaults menu 
+        <b>addonsMenu</b>: Defines the addon's main menu location, defaults menu 
         'main_menu_scripting'.<br>Use developer tool menuItemInfo to inspect 
         menu location keys.<br>This attribute is mandatory.<br>Example: 
         '/menu_bar/myAddons'
       </li>
       <li>
-        downloadUrl: URL from the place where the AddOn file will be available 
-        for downloading.<br>By default is the same as the homepage.<br>You can 
-        define a different place or a subfolder of the homepage.<br>Example: 
-        &quot;${homepage}/files/&quot;
+        <b>downloadUrl</b>: URL from the place where the AddOn file will be 
+        available for downloading.<br>By default is the same as the homepage.<br>You 
+        can define a different place or a subfolder of the homepage.<br>Examples:
+
+        <ul>
+          <li>
+            <b>homepage subfolder 'files'</b>: &quot;${homepage}/files/&quot;
+          </li>
+          <li>
+            <b>For GitHub releases (release named as the add-on version)</b>: 
+            ${homepage}/releases/download/${version}/
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>changelogUrl</b>: URL from the place where the history file will be 
+        available for downloading.<br>By default is &quot;${homepage}/history.md&quot;<br>You 
+        can define a different place or a subfolder of the homepage and a 
+        different file name and extension if wanted.<br>Examples:
+
+        <ul>
+          <li>
+            <b>txt file</b>: &quot;${homepage}/history.md&quot;
+          </li>
+          <li>
+            <b>For GitHub releases as Markdown file</b>: 
+            &quot;${homepage}/releases/latest/download/history.md&quot;
+          </li>
+        </ul>
       </li>
     </ul>
   </body>
@@ -455,17 +497,33 @@ if( checkPreferences && preferencesNode.attributes ){
 def translationsNode = findOrCreate(root, 'translations', LEFT)
 translationsNode.note = withBody '''
     <p>
-      The translation keys that this script uses. Define one child node per supported locale. The attributes contain the translations. Define at least
+      The translation keys that this script uses. Define one child node per 
+      supported locale. The attributes contain the translations. Define at 
+      least
     </p>
     <ul>
       <li>
         'addons.${name}' for the add-on's name
       </li>
       <li>
-        'addons.${name}.description' for the description, e.g. in the add-on overview dialog (not necessary for English)
+        'addons.${name}.description' for the description, e.g. in the add-on 
+        overview dialog (not necessary for English)
       </li>
       <li>
-        'addons.${name}.&lt;scriptname&gt;' for each script since it will be the menu title.
+        'addons.${name}.&lt;scriptname&gt;' for each script since it will be the 
+        menu title.
+      </li>
+      <li>
+        'OptionPanel.separator.${name}' for the add-on's name in the 
+        preferences panel
+      </li>
+      <li>
+        'OptionPanel.&lt;property&gt;' for the label of the property in the 
+        preferences panel
+      </li>
+      <li>
+        'OptionPanel.&lt;property&gt;.tooltip' for the tooltip message for the 
+        property in the preferences panel (whwn hovering on it with the mouse)
       </li>
     </ul>
 '''
