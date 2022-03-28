@@ -11,7 +11,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_271890427" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#000000" STYLE="fork" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm" VGAP_QUANTITY="2 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#808080" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="SOLID">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-28.5 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_271890427" STARTINCLINATION="65.25 pt;-27.75 pt;" ENDINCLINATION="55.5 pt;18.75 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="SansSerif" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
@@ -659,6 +659,7 @@ blockquote {
 <node TEXT="&quot;**Package add-on for publication**&quot; can now open the new add-on for direct installation" ID="ID_250352766"/>
 </node>
 </node>
+</node>
 <node TEXT="New in v0.9.30:" ID="ID_250849647">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_955469551"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -678,9 +679,30 @@ blockquote {
 </node>
 </node>
 </node>
+<node TEXT="New in v0.9.31:" ID="ID_1227746329">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_632094024"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.list(node)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="**changeLogURL** added as **preference parameter**" ID="ID_585495645"/>
+<node TEXT=" **change log URL** property to **version.properties**" ID="ID_846931039">
+<node TEXT="Now it adds the **changelogurl** property to the **version.properties** file" ID="ID_173510244"/>
+<node TEXT="This way the user can download the **History** file directly from Freeplane&apos;s **check updates** dialog" ID="ID_1124481452"/>
+</node>
+<node TEXT="automatically creates and updates &apos;**history.md**&apos; file" ID="ID_1372738195">
+<node TEXT="&quot;**Package add-on for publication**&quot; automatically creates a &quot;**history.md**&quot; file using the information form the &quot;**changes**&quot; node" ID="ID_1257424063"/>
 </node>
 </node>
-<node TEXT="Change Log" FOLDED="true" ID="ID_309963735">
+</node>
+</node>
+<node TEXT="Change Log" ID="ID_309963735">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1015823873"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -692,7 +714,12 @@ blockquote {
     </p>
   </body>
 </html></richcontent>
-<node TEXT="v0.9.30" ID="ID_1353343071">
+<node TEXT="v0.9.31" ID="ID_1185204241">
+<node TEXT="now it creates and updates &apos;history.md&apos; file" ID="ID_474363164"/>
+<node TEXT="adds changelogurl property to version.properties file" ID="ID_1264034468"/>
+<node TEXT="changeLogURL added as preference parameter" ID="ID_1782400840"/>
+</node>
+<node TEXT="v0.9.30" FOLDED="true" ID="ID_1353343071">
 <node TEXT="bug fixes" ID="ID_455683896"/>
 <node TEXT="Added parametric preferences.xml" ID="ID_1150518564"/>
 </node>
